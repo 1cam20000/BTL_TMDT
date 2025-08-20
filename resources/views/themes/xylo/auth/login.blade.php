@@ -21,7 +21,7 @@
                 <div class="login-foam">
 
                     <div class="logo-login mb-2 mb-md-5">
-                        <img src="assets/images/logo-main.png" width="200px" alt="logo main">
+                        <img src="/assets/images/logo-main.png" width="200px" alt="logo main">
                     </div>
 
                     <h2>Welcome Back</h2>

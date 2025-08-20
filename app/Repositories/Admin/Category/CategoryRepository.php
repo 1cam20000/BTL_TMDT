@@ -53,6 +53,11 @@ class CategoryRepository implements CategoryRepositoryInterface
     {
         $category = $this->find($id);
 
+        // Xóa đệ quy tất cả category con
+        foreach ($category->children as $child) {
+            $this->destroy($child->id);
+        }
+
         foreach ($category->translations as $translation) {
             if ($translation->image_url) {
                 \Storage::disk('public')->delete($translation->image_url);

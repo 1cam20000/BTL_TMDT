@@ -67,8 +67,8 @@
                     <div class="tab-content mt-3" id="languageTabContent">
                         @foreach ($languages as $language)
                             <div class="tab-pane fade show {{ $loop->first ? 'active' : '' }}" id="{{ $language->code }}" role="tabpanel">
-                                <label class="form-label">{{ __('cms.social_media_links.translations.platform_name') }} ({{ $language->name }})</label>
-                                <input type="text" name="languages[{{ $language->code }}][name]" class="form-control @error('languages.' . $language->code . '.name') is-invalid @enderror" required>
+                                <label class="form-label" for="sm-name-{{ $language->code }}">{{ __('cms.social_media_links.translations.platform_name') }} ({{ $language->name }})</label>
+                                <input type="text" name="languages[{{ $language->code }}][name]" class="form-control sm-name-input @error('languages.' . $language->code . '.name') is-invalid @enderror" id="sm-name-{{ $language->code }}" data-lang="{{ $language->code }}">
                                 @error('languages.' . $language->code . '.name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -82,4 +82,30 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+<script>
+    // Chỉ enable/require trường của tab active
+    function updateLanguageTabFields() {
+        document.querySelectorAll('.tab-pane').forEach(function(tabPane) {
+            var isActive = tabPane.classList.contains('active');
+            tabPane.querySelectorAll('.sm-name-input').forEach(function(input) {
+                if (isActive) {
+                    input.removeAttribute('disabled');
+                    input.setAttribute('required', 'required');
+                } else {
+                    input.setAttribute('disabled', 'disabled');
+                    input.removeAttribute('required');
+                }
+            });
+        });
+    }
+    updateLanguageTabFields();
+    document.querySelectorAll('#languageTabs button[data-bs-toggle="tab"]').forEach(function(tabBtn) {
+        tabBtn.addEventListener('shown.bs.tab', function() {
+            updateLanguageTabFields();
+        });
+    });
+</script>
 @endsection

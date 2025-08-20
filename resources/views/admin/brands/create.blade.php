@@ -31,10 +31,11 @@
                             @foreach($activeLanguages as $language)
                                 <div class="tab-pane fade show {{ $loop->first ? 'active' : '' }}" id="{{ $language->name }}" role="tabpanel">
                                     <label class="form-label">{{ __('cms.brands.name') }} ({{ $language->code }})</label>
-                                    <input type="text"
-                                           name="translations[{{ $language->code }}][name]"
-                                           class="form-control @error("translations.{$language->code}.name") is-invalid @enderror"
-                                           value="{{ old("translations.{$language->code}.name") }}">
+                     <input type="text"
+                         name="translations[{{ $language->code }}][name]"
+                         class="form-control @error("translations.{$language->code}.name") is-invalid @enderror"
+                         value="{{ old("translations.{$language->code}.name") }}"
+                         data-required="true" required>
                                     @error("translations.{$language->code}.name")
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
@@ -67,6 +68,39 @@
                 </div>
                 <button type="submit" class="mt-3 btn btn-primary">{{ __('cms.brands.create') }}</button>
             </form>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var tabLinks = document.querySelectorAll('.nav-link');
+                var tabPanes = document.querySelectorAll('.tab-pane');
+
+                function updateRequiredAttributes() {
+                    tabPanes.forEach(function(pane) {
+                        var inputs = pane.querySelectorAll('input, textarea');
+                        if (pane.classList.contains('active')) {
+                            inputs.forEach(function(input) {
+                                input.removeAttribute('disabled');
+                                if (input.hasAttribute('data-required')) {
+                                    input.setAttribute('required', 'required');
+                                }
+                            });
+                        } else {
+                            inputs.forEach(function(input) {
+                                input.setAttribute('disabled', 'disabled');
+                                input.removeAttribute('required');
+                            });
+                        }
+                    });
+                }
+
+                tabLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        setTimeout(updateRequiredAttributes, 50);
+                    });
+                });
+
+                updateRequiredAttributes();
+            });
+            </script>
         </div>
     </div>
 @endsection

@@ -1,4 +1,3 @@
-
 @extends('admin.layouts.admin')
 
 @section('content')
@@ -53,18 +52,18 @@
                                      id="{{ $language->code }}" role="tabpanel">
                                      
                                     <div class="form-group">
-                                        <label for="languages[{{ $language->code }}][title]">{{ __('cms.banners.title') }}</label>
-                                        <input type="text" name="languages[{{ $language->code }}][title]" 
-                                               class="form-control @error('languages.' . $language->code . '.title') is-invalid @enderror"
-                                               value="{{ old('languages.' . $language->code . '.title') }}" required>
+                                        <label for="languages_{{ $language->code }}_title">{{ __('cms.banners.title') }}</label>
+                         <input id="languages_{{ $language->code }}_title" type="text" name="languages[{{ $language->code }}][title]" 
+                             class="form-control @error('languages.' . $language->code . '.title') is-invalid @enderror"
+                             value="{{ old('languages.' . $language->code . '.title') }}" data-required="true" required>
                                         @error('languages.' . $language->code . '.title') 
                                             <div class="invalid-feedback">{{ $message }}</div> 
                                         @enderror
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="languages[{{ $language->code }}][description]">{{ __('cms.banners.description') }}</label>
-                                        <textarea name="languages[{{ $language->code }}][description]" 
+                                        <label for="languages_{{ $language->code }}_description">{{ __('cms.banners.description') }}</label>
+                                        <textarea id="languages_{{ $language->code }}_description" name="languages[{{ $language->code }}][description]" 
                                                   class="form-control @error('languages.' . $language->code . '.description') is-invalid @enderror"
                                                   rows="3">{{ old('languages.' . $language->code . '.description') }}</textarea>
                                         @error('languages.' . $language->code . '.description') 
@@ -72,17 +71,18 @@
                                         @enderror
                                     </div>
 
-                                    <label class="form-label mt-2">{{ __('cms.banners.image') }} ({{ $language->code }})</label>
+                                    <label class="form-label mt-2" for="image_file_{{ $language->code }}">{{ __('cms.banners.image') }} ({{ $language->code }})</label>
                                     <div class="input-group">
                                         <label for="image_file_{{ $language->code }}" class="btn btn-primary">
                                             {{ __('cms.banners.choose_file') }}
                                         </label>
 
-                                        <input type="file" id="image_file_{{ $language->code }}" 
-                                               name="languages[{{ $language->code }}][image]" 
-                                               class="d-none form-control @error('languages.' . $language->code . '.image') is-invalid @enderror"
-                                               accept="image/*"
-                                               onchange="updateFileName(this, '{{ $language->code }}'); previewImage(this, '{{ $language->code }}')"> 
+                         <input type="file" id="image_file_{{ $language->code }}" 
+                             name="languages[{{ $language->code }}][image]" 
+                             class="d-none form-control @error('languages.' . $language->code . '.image') is-invalid @enderror"
+                             accept="image/*"
+                             data-required="true" required
+                             onchange="updateFileName(this, '{{ $language->code }}'); previewImage(this, '{{ $language->code }}')"> 
                                         
                                         <span id="file-name-{{ $language->code }}" class="ms-2 text-muted"></span>
                                     </div>
@@ -106,6 +106,42 @@
 
                 <button type="submit" class="btn btn-primary mt-3">{{ __('cms.banners.save') }}</button>
             </form>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var form = document.querySelector('form');
+                        var tabLinks = document.querySelectorAll('.nav-link');
+                        var tabPanes = document.querySelectorAll('.tab-pane');
+
+                        function updateRequiredAttributes() {
+                            tabPanes.forEach(function(pane) {
+                                var inputs = pane.querySelectorAll('input, textarea');
+                                if (pane.classList.contains('active')) {
+                                    inputs.forEach(function(input) {
+                                        input.removeAttribute('disabled');
+                                        if (input.hasAttribute('data-required')) {
+                                            input.setAttribute('required', 'required');
+                                        }
+                                    });
+                                } else {
+                                    inputs.forEach(function(input) {
+                                        input.setAttribute('disabled', 'disabled');
+                                        input.removeAttribute('required');
+                                    });
+                                }
+                            });
+                        }
+
+                        // Cập nhật khi chuyển tab
+                        tabLinks.forEach(function(link) {
+                            link.addEventListener('click', function() {
+                                setTimeout(updateRequiredAttributes, 50);
+                            });
+                        });
+
+                        // Khởi tạo khi load trang
+                        updateRequiredAttributes();
+                    });
+                </script>
         </div>
     </div>
 

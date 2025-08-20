@@ -115,12 +115,12 @@
                 </ul>
 
                 <div class="tab-content mt-3">
-                    @foreach ($languages as $language)
-                        <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="{{ $language->code }}">
-                            <label class="form-label">{{ __('cms.menu_items.title') }} ({{ $language->code }})</label>
-                            <input type="text" name="title[{{ $language->code }}]" class="form-control" required>
-                        </div>
-                    @endforeach
+                        @foreach ($languages as $language)
+                            <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="{{ $language->code }}">
+                                <label class="form-label" for="menu-title-{{ $language->code }}">{{ __('cms.menu_items.title') }} ({{ $language->code }})</label>
+                                <input type="text" name="title[{{ $language->code }}]" class="form-control menu-title-input" id="menu-title-{{ $language->code }}" data-lang="{{ $language->code }}">
+                            </div>
+                        @endforeach
                 </div>
                 <br />
 
@@ -161,6 +161,32 @@
             </form>
         </div>
     </div>
+@endsection
+
+@section('js')
+<script>
+    // Chỉ enable/require trường của tab active
+    function updateLanguageTabFields() {
+        document.querySelectorAll('.tab-pane').forEach(function(tabPane) {
+            var isActive = tabPane.classList.contains('active');
+            tabPane.querySelectorAll('.menu-title-input').forEach(function(input) {
+                if (isActive) {
+                    input.removeAttribute('disabled');
+                    input.setAttribute('required', 'required');
+                } else {
+                    input.setAttribute('disabled', 'disabled');
+                    input.removeAttribute('required');
+                }
+            });
+        });
+    }
+    updateLanguageTabFields();
+    document.querySelectorAll('ul.nav-tabs button[data-bs-toggle], ul.nav-tabs button[data-bs-toggle="tab"]').forEach(function(tabBtn) {
+        tabBtn.addEventListener('shown.bs.tab', function() {
+            updateLanguageTabFields();
+        });
+    });
+</script>
 @endsection
 
 

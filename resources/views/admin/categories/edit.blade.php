@@ -48,11 +48,11 @@
                                 
                                 <!-- Name Field -->
                                 <label class="form-label">{{ __('cms.categories.name') }} ({{ $language->code }})</label>
-                                <input type="text" 
-                                       name="translations[{{ $language->code }}][name]" 
-                                       class="form-control @error('translations.{{ $language->code }}.name') is-invalid @enderror" 
-                                       value="{{ $translation->name ?? '' }}"
-                                       required>
+                    <input type="text" 
+                        name="translations[{{ $language->code }}][name]" 
+                        class="form-control @error('translations.{{ $language->code }}.name') is-invalid @enderror" 
+                        value="{{ $translation->name ?? '' }}"
+                        data-required="true" required>
                                 @error('translations.{{ $language->code }}.name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -98,6 +98,39 @@
                 <button type="submit" class="mt-3 btn btn-primary">{{ cms_translate('categories.button') }}</button>
             </form>
         </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var tabLinks = document.querySelectorAll('.nav-link');
+            var tabPanes = document.querySelectorAll('.tab-pane');
+
+            function updateRequiredAttributes() {
+                tabPanes.forEach(function(pane) {
+                    var inputs = pane.querySelectorAll('input, textarea');
+                    if (pane.classList.contains('active')) {
+                        inputs.forEach(function(input) {
+                            input.removeAttribute('disabled');
+                            if (input.hasAttribute('data-required')) {
+                                input.setAttribute('required', 'required');
+                            }
+                        });
+                    } else {
+                        inputs.forEach(function(input) {
+                            input.setAttribute('disabled', 'disabled');
+                            input.removeAttribute('required');
+                        });
+                    }
+                });
+            }
+
+            tabLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    setTimeout(updateRequiredAttributes, 50);
+                });
+            });
+
+            updateRequiredAttributes();
+        });
+        </script>
     </div>
 @endsection
 

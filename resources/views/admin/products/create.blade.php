@@ -30,19 +30,22 @@
             <div class="tab-content mt-3" id="languageTabContent">
                 @foreach($activeLanguages as $language)
                     <div class="tab-pane fade show {{ $loop->first ? 'active' : '' }}" id="{{ $language->name }}" role="tabpanel">
-                        <label class="form-label">{{ __('cms.products.product_name') }} ({{ $language->code }})</label>
-                        <input type="text"
-                               name="translations[{{ $language->code }}][name]"
-                               class="form-control @error("translations.{$language->code}.name") is-invalid @enderror"
-                               value="{{ old("translations.{$language->code}.name") }}"
-                               required>
+               <label class="form-label" for="product-name-{{ $language->code }}">{{ __('cms.products.product_name') }} ({{ $language->code }})</label>
+               <input type="text"
+                   name="translations[{{ $language->code }}][name]"
+                   class="form-control product-name-input @error("translations.{$language->code}.name") is-invalid @enderror"
+                   id="product-name-{{ $language->code }}"
+                   data-lang="{{ $language->code }}"
+                   value="{{ old("translations.{$language->code}.name") }}">
                         @error("translations.{$language->code}.name")
                             <div class="invalid-feedback d-block">{{ $message }}</div>
                         @enderror
             
-                        <label class="form-label mt-3">{{ __('cms.products.description') }} ({{ $language->code }})</label>
+                        <label class="form-label mt-3" for="product-desc-{{ $language->code }}">{{ __('cms.products.description') }} ({{ $language->code }})</label>
                         <textarea name="translations[{{ $language->code }}][description]"
-                                  class="form-control ck-editor-multi-languages @error("translations.{$language->code}.description") is-invalid @enderror">{{ old("translations.{$language->code}.description") }}</textarea>
+                                  class="form-control ck-editor-multi-languages product-desc-input @error("translations.{$language->code}.description") is-invalid @enderror"
+                                  id="product-desc-{{ $language->code }}"
+                                  data-lang="{{ $language->code }}">{{ old("translations.{$language->code}.description") }}</textarea>
                         @error("translations.{$language->code}.description")
                             <div class="invalid-feedback d-block">{{ $message }}</div>
                         @enderror

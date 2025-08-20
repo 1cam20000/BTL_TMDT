@@ -11,6 +11,13 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\User::updateOrCreate(
+            ['email' => 'admin@velstore.com'],
+            [
+                'name' => 'Admin',
+                'email' => 'admin@velstore.com',
+                'password' => bcrypt('admin123'),
+            ]
+        );
     }
 }

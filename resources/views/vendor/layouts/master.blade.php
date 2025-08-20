@@ -52,7 +52,7 @@
             </div>
             <div class="dropdown">
                 <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
-                    <img src="https://via.placeholder.com/40" class="rounded-circle" alt="Profile">
+                    <img src="/assets/images/logo-main.png" class="rounded-circle" alt="Profile">
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="#">Profile</a></li>

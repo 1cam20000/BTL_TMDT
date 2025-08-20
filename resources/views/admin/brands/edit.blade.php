@@ -33,14 +33,18 @@
                         <div class="tab-content mt-3" id="languageTabContent">
                             @foreach($activeLanguages as $language)
                                 <div class="tab-pane fade show {{ $loop->first ? 'active' : '' }}" id="{{ $language->name }}" role="tabpanel">
-                                    <label class="form-label">{{ __('cms.brands.name') }} ({{ $language->code }})</label>
+                                    <label class="form-label" for="brand-name-{{ $language->code }}">{{ __('cms.brands.name') }} ({{ $language->code }})</label>
                                     <input type="text" name="translations[{{ $language->code }}][name]" 
-                                           class="form-control" 
+                                           class="form-control brand-name-input" 
+                                           id="brand-name-{{ $language->code }}"
+                                           data-lang="{{ $language->code }}"
                                            value="{{ old('translations.'.$language->code.'.name', $brand->translations->firstWhere('locale', $language->code)->name ?? '') }}">
-                                    
-                                    <label class="form-label">{{ __('cms.brands.description') }} ({{ $language->code }})</label>
+
+                                    <label class="form-label" for="brand-desc-{{ $language->code }}">{{ __('cms.brands.description') }} ({{ $language->code }})</label>
                                     <textarea name="translations[{{ $language->code }}][description]" 
-                                              class="form-control ck-editor-multi-languages">{{ old('translations.'.$language->code.'.description', $brand->translations->firstWhere('locale', $language->code)->description ?? '') }}</textarea>
+                                              class="form-control ck-editor-multi-languages brand-desc-input"
+                                              id="brand-desc-{{ $language->code }}"
+                                              data-lang="{{ $language->code }}">{{ old('translations.'.$language->code.'.description', $brand->translations->firstWhere('locale', $language->code)->description ?? '') }}</textarea>
                                 </div>
                             @endforeach
                         </div>
@@ -70,12 +74,13 @@
     </div>
 @endsection
 @section('js')
+<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 <script>
+    // Logo preview
     document.getElementById('logo_file').addEventListener('change', function(event) {
         var file = event.target.files[0];
         var previewElement = document.getElementById('logo_preview');
         var previewImage = document.getElementById('logo_preview_img');
-
         if (file) {
             var reader = new FileReader();
             reader.onload = function(e) {
@@ -87,15 +92,40 @@
             previewElement.style.display = 'none';
         }
     });
-</script>
-<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
-<script>
+
+    // CKEditor init
     document.querySelectorAll('.ck-editor-multi-languages').forEach((element) => {
-        ClassicEditor
-            .create(element)
-            .catch(error => {
-                console.error(error);
+        if (typeof ClassicEditor !== 'undefined') {
+            ClassicEditor
+                .create(element)
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+    });
+
+    // Only enable/require fields in active tab
+    function updateLanguageTabFields() {
+        document.querySelectorAll('.tab-pane').forEach(function(tabPane) {
+            var isActive = tabPane.classList.contains('active');
+            tabPane.querySelectorAll('.brand-name-input, .brand-desc-input').forEach(function(input) {
+                if (isActive) {
+                    input.removeAttribute('disabled');
+                    input.setAttribute('required', 'required');
+                } else {
+                    input.setAttribute('disabled', 'disabled');
+                    input.removeAttribute('required');
+                }
             });
+        });
+    }
+    // Initial call
+    updateLanguageTabFields();
+    // Listen tab change
+    document.querySelectorAll('#languageTabs button[data-bs-toggle="tab"]').forEach(function(tabBtn) {
+        tabBtn.addEventListener('shown.bs.tab', function() {
+            updateLanguageTabFields();
+        });
     });
 </script>
 @endsection

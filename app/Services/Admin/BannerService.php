@@ -24,15 +24,15 @@ class BannerService
 
     public function store(Request $request)
     {
-        $activeLanguages = Language::where('active', 1)->pluck('code')->toArray();
+        $languagesInput = $request->input('languages', []);
 
         $rules = [
             'type' => 'required|in:promotion,sale,seasonal,featured,announcement',
         ];
 
-        foreach ($activeLanguages as $code) {
+        foreach (array_keys($languagesInput) as $code) {
             $rules["languages.$code.title"] = 'required|string|max:255';
-            $rules["languages.$code.image"] = 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10000';
+            $rules["languages.$code.image"] = 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10000';
             $rules["languages.$code.image_title"] = 'nullable|string|max:255';
         }
 
@@ -40,7 +40,7 @@ class BannerService
 
         $banner = $this->bannerRepository->createBanner($request->only('type'));
 
-        foreach ($activeLanguages as $code) {
+        foreach (array_keys($languagesInput) as $code) {
             $languageData = $request->input("languages.$code");
             $image = $request->file("languages.$code.image");
 

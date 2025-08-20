@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <nav id="sidebar" class="d-flex flex-column p-3">
     <div class="logo-container">
-        <img src="https://via.placeholder.com/100" alt="{{ __('cms.sidebar.logo') }}">
+        <img src="/assets/images/logo-main.png" alt="Logo">
     </div>
     <div class="search-container position-relative">
         <input type="text" class="form-control" placeholder="{{ __('cms.sidebar.search_placeholder') }}" id="searchInput" autocomplete="off">
