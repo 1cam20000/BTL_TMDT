@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => '供应商',
+            'add_new' => '新增',
             'list' => '列表',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => '待处理订单',
             'completed_orders' => '已完成订单',
         ],
+        'pages' => [
+            'title' => '页面',
+            'add_new' => '新增',
+            'list' => '列表',
+        ],
+        'payments' => [
+            'title' => '支付',
+            'list' => '列表',
+        ],
+
+        'refunds' => [
+            'title' => '退款',
+            'list' => '列表',
+        ],
+
+        'payment_gateways' => [
+            'title' => '支付网关',
+            'list' => '列表',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => '支付网关',
+        'edit_title' => '编辑支付网关',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => '名称',
+        'code' => '代码',
+        'status' => '状态',
+        'action' => '操作',
+
+        // Status Labels
+        'active' => '激活',
+        'inactive' => '未激活',
+
+        // Delete Modal
+        'delete_confirm' => '确认删除',
+        'delete_message' => '您确定要删除此支付网关吗？',
+        'cancel' => '取消',
+        'delete' => '删除',
+
+        // Alerts / Notifications
+        'success' => '成功',
+        'deleted' => '已删除',
+        'delete_error' => '删除支付网关时出错！',
+
+        // Form Labels
+        'gateway_name' => '网关名称',
+        'description' => '描述',
+        'active_label' => '激活',
+        'configurations' => '网关配置',
+        'key_name' => '键名',
+        'key_value' => '键值',
+        'environment' => '环境',
+        'sandbox' => '沙盒',
+        'production' => '生产',
+        'encrypted' => '已加密',
+        'unique' => '唯一',
+        'update_button' => '更新',
+
+        // Fallback
+        'not_available' => '不可用',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => '退款',
+        'details_title' => '退款详情',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => '支付',
+        'amount' => '金额',
+        'status' => '状态',
+        'reason' => '原因',
+        'action' => '操作',
+
+        // Status Labels
+        'completed' => '已完成',
+        'pending' => '待处理',
+        'failed' => '失败',
+
+        // Delete Modal
+        'delete_confirm' => '确认删除',
+        'delete_message' => '您确定要删除此退款吗？',
+        'cancel' => '取消',
+        'delete' => '删除',
+
+        // Alerts / Notifications
+        'success' => '成功',
+        'deleted' => '已删除',
+        'delete_error' => '删除退款时出错！',
+
+        // Refund Details Page
+        'created_at' => '创建时间',
+        'updated_at' => '更新时间',
+        'back' => '返回退款列表',
+
+        // Fallback
+        'not_available' => '不可用',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => '付款',
+        'details_title' => '付款详情',
+
+        // Table Headings
+        'id' => '编号',
+        'order' => '订单',
+        'user' => '用户',
+        'gateway' => '支付网关',
+        'amount' => '金额',
+        'status' => '状态',
+        'transaction' => '交易',
+        'action' => '操作',
+
+        // Status Labels
+        'completed' => '已完成',
+        'pending' => '待处理',
+        'failed' => '失败',
+
+        // Delete Modal
+        'delete_confirm' => '确认删除',
+        'delete_message' => '您确定要删除此付款吗？',
+        'cancel' => '取消',
+        'delete' => '删除',
+
+        // Alerts / Notifications
+        'success' => '成功',
+        'deleted' => '已删除',
+        'delete_error' => '删除付款时出错！',
+
+        // Payment Details Page
+        'transaction_id' => '交易编号',
+        'created_at' => '创建时间',
+        'back' => '返回付款列表',
+
+        // Fallback
+        'not_available' => '不可用',
+    ],
+
+    'pages' => [
+        // General
+        'title' => '页面',
+        'choose_file' => '选择文件',
+
+        // Create Page
+        'create' => '创建页面',
+        'form_title' => '标题 (:code)',
+        'form_content' => '内容 (:code)',
+        'form_image' => '图片 (:code)',
+        'form_save' => '保存',
+
+        // Edit Page
+        'edit' => '编辑页面',
+        'form_update' => '更新',
+
+        // Pages Table
+        'table_title' => '标题',
+        'table_slug' => 'Slug',
+        'table_status' => '状态',
+        'table_actions' => '操作',
+
+        // Delete Modal
+        'delete_modal_title' => '确认删除',
+        'delete_modal_text' => '您确定要删除此页面吗？',
+        'delete_modal_cancel' => '取消',
+        'delete_modal_delete' => '删除',
+
+        // Toastr messages
+        'toastr_success' => '成功',
+        'toastr_error' => '删除页面时出错',
+    ],
+
+    'customers' => [
+        'customer_list' => '客户列表',
+
+        // Table columns
+        'id' => '编号',
+        'name' => '姓名',
+        'email' => '邮箱',
+        'phone' => '电话',
+        'address' => '地址',
+        'status' => '状态',
+        'actions' => '操作',
+
+        // Status labels
+        'active' => '启用',
+        'inactive' => '停用',
+
+        // Modal
+        'confirm_delete_title' => '确认删除',
+        'confirm_delete_message' => '您确定要删除此客户吗？',
+        'cancel_button' => '取消',
+        'delete_button' => '删除',
+
+        // Toastr messages
+        'success_title' => '成功',
+        'deleted_title' => '已删除',
+        'delete_success_message' => '客户已成功删除！',
+        'delete_error_message' => '删除客户时出错！',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => '电话',
         'status' => '状态',
         'actions' => '操作',
+        'register_new_vendor' => '注册新商家',
+        'vendor_name' => '商家名称',
+        'vendor_email' => '商家邮箱',
+        'phone_optional' => '电话（可选）',
+        'password' => '密码',
+        'confirm_password' => '确认密码',
+        'status' => '状态',
+        'active' => '启用',
+        'inactive' => '停用',
+        'banned' => '已封禁',
+        'register_button' => '注册商家',
+        'cancel_button' => '取消',
 
         'active' => '激活',
         'inactive' => '未激活',
@@ -184,6 +404,8 @@ return [
         'title_manage' => '管理产品',
 
         // Form Fields
+        'vendor' => '供应商',
+        'select_vendor' => '选择供应商',
         'product_name' => '产品名称',
         'product_type' => '产品类型',
         'description' => '描述',

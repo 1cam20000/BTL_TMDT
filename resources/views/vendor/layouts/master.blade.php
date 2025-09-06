@@ -136,6 +136,28 @@
             });
         });
     </script>
+    <script>
+        $(document).on('click', '.language-select', function (e) {
+            e.preventDefault();
+
+            let lang = $(this).data('lang');
+
+            $.ajax({
+                url: "{{ route('vendor.change.language') }}",
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    lang: lang
+                },
+                success: function () {
+                    location.reload(); // reload to apply translations
+                },
+                error: function () {
+                    toastr.error("Failed to change language");
+                }
+            });
+        });
+    </script>
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     @yield('js')

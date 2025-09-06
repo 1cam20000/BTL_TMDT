@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'Vendeurs',
+            'add_new' => 'Ajouter nouveau',
             'list' => 'Liste',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'Commandes en attente',
             'completed_orders' => 'Commandes terminées',
         ],
+        'pages' => [
+            'title' => 'Pages',
+            'add_new' => 'Ajouter',
+            'list' => 'Liste',
+        ],
+        'payments' => [
+            'title' => 'Paiements',
+            'list' => 'Liste',
+        ],
+
+        'refunds' => [
+            'title' => 'Remboursements',
+            'list' => 'Liste',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'Passerelles de paiement',
+            'list' => 'Liste',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'Passerelles de paiement',
+        'edit_title' => 'Modifier la passerelle de paiement',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'Nom',
+        'code' => 'Code',
+        'status' => 'Statut',
+        'action' => 'Action',
+
+        // Status Labels
+        'active' => 'Actif',
+        'inactive' => 'Inactif',
+
+        // Delete Modal
+        'delete_confirm' => 'Confirmer la suppression',
+        'delete_message' => 'Êtes-vous sûr de vouloir supprimer cette passerelle de paiement ?',
+        'cancel' => 'Annuler',
+        'delete' => 'Supprimer',
+
+        // Alerts / Notifications
+        'success' => 'Succès',
+        'deleted' => 'Supprimé',
+        'delete_error' => 'Erreur lors de la suppression de la passerelle de paiement !',
+
+        // Form Labels
+        'gateway_name' => 'Nom de la passerelle',
+        'description' => 'Description',
+        'active_label' => 'Actif',
+        'configurations' => 'Configurations de la passerelle',
+        'key_name' => 'Nom de la clé',
+        'key_value' => 'Valeur de la clé',
+        'environment' => 'Environnement',
+        'sandbox' => 'Sandbox',
+        'production' => 'Production',
+        'encrypted' => 'Crypté',
+        'unique' => 'Unique',
+        'update_button' => 'Mettre à jour',
+
+        // Fallback
+        'not_available' => 'N/A',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'Remboursements',
+        'details_title' => 'Détails du remboursement',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => 'Paiement',
+        'amount' => 'Montant',
+        'status' => 'Statut',
+        'reason' => 'Raison',
+        'action' => 'Action',
+
+        // Status Labels
+        'completed' => 'Terminé',
+        'pending' => 'En attente',
+        'failed' => 'Échoué',
+
+        // Delete Modal
+        'delete_confirm' => 'Confirmer la suppression',
+        'delete_message' => 'Êtes-vous sûr de vouloir supprimer ce remboursement ?',
+        'cancel' => 'Annuler',
+        'delete' => 'Supprimer',
+
+        // Alerts / Notifications
+        'success' => 'Succès',
+        'deleted' => 'Supprimé',
+        'delete_error' => 'Erreur lors de la suppression du remboursement !',
+
+        // Refund Details Page
+        'created_at' => 'Créé le',
+        'updated_at' => 'Mis à jour le',
+        'back' => 'Retour aux remboursements',
+
+        // Fallback
+        'not_available' => 'Non disponible',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'Paiements',
+        'details_title' => 'Détails du paiement',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => 'Commande',
+        'user' => 'Utilisateur',
+        'gateway' => 'Passerelle de paiement',
+        'amount' => 'Montant',
+        'status' => 'Statut',
+        'transaction' => 'Transaction',
+        'action' => 'Action',
+
+        // Status Labels
+        'completed' => 'Terminé',
+        'pending' => 'En attente',
+        'failed' => 'Échoué',
+
+        // Delete Modal
+        'delete_confirm' => 'Confirmer la suppression',
+        'delete_message' => 'Êtes-vous sûr de vouloir supprimer ce paiement ?',
+        'cancel' => 'Annuler',
+        'delete' => 'Supprimer',
+
+        // Alerts / Notifications
+        'success' => 'Succès',
+        'deleted' => 'Supprimé',
+        'delete_error' => 'Erreur lors de la suppression du paiement !',
+
+        // Payment Details Page
+        'transaction_id' => 'ID de transaction',
+        'created_at' => 'Créé le',
+        'back' => 'Retour aux paiements',
+
+        // Fallback
+        'not_available' => 'Non disponible',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'Pages',
+        'choose_file' => 'Choisir un fichier',
+
+        // Create Page
+        'create' => 'Créer une page',
+        'form_title' => 'Titre (:code)',
+        'form_content' => 'Contenu (:code)',
+        'form_image' => 'Image (:code)',
+        'form_save' => 'Enregistrer',
+
+        // Edit Page
+        'edit' => 'Modifier la page',
+        'form_update' => 'Mettre à jour',
+
+        // Pages Table
+        'table_title' => 'Titre',
+        'table_slug' => 'Slug',
+        'table_status' => 'Statut',
+        'table_actions' => 'Actions',
+
+        // Delete Modal
+        'delete_modal_title' => 'Confirmer la suppression',
+        'delete_modal_text' => 'Êtes-vous sûr de vouloir supprimer cette page ?',
+        'delete_modal_cancel' => 'Annuler',
+        'delete_modal_delete' => 'Supprimer',
+
+        // Toastr messages
+        'toastr_success' => 'Succès',
+        'toastr_error' => 'Erreur lors de la suppression de la page',
+    ],
+
+    'customers' => [
+        'customer_list' => 'Liste des clients',
+
+        // Table columns
+        'id' => 'ID',
+        'name' => 'Nom',
+        'email' => 'Email',
+        'phone' => 'Téléphone',
+        'address' => 'Adresse',
+        'status' => 'Statut',
+        'actions' => 'Actions',
+
+        // Status labels
+        'active' => 'Actif',
+        'inactive' => 'Inactif',
+
+        // Modal
+        'confirm_delete_title' => 'Confirmer la suppression',
+        'confirm_delete_message' => 'Êtes-vous sûr de vouloir supprimer ce client ?',
+        'cancel_button' => 'Annuler',
+        'delete_button' => 'Supprimer',
+
+        // Toastr messages
+        'success_title' => 'Succès',
+        'deleted_title' => 'Supprimé',
+        'delete_success_message' => 'Client supprimé avec succès !',
+        'delete_error_message' => 'Erreur lors de la suppression du client !',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'Téléphone',
         'status' => 'Statut',
         'actions' => 'Actions',
+        'register_new_vendor' => 'Enregistrer un nouveau vendeur',
+        'vendor_name' => 'Nom du vendeur',
+        'vendor_email' => 'E-mail du vendeur',
+        'phone_optional' => 'Téléphone (optionnel)',
+        'password' => 'Mot de passe',
+        'confirm_password' => 'Confirmer le mot de passe',
+        'status' => 'Statut',
+        'active' => 'Actif',
+        'inactive' => 'Inactif',
+        'banned' => 'Banni',
+        'register_button' => 'Enregistrer le vendeur',
+        'cancel_button' => 'Annuler',
 
         'active' => 'Actif',
         'inactive' => 'Inactif',
@@ -184,6 +404,8 @@ return [
         'title_manage' => 'Gérer les produits',
 
         // Champs du formulaire
+        'vendor' => 'Vendeur',
+        'select_vendor' => 'Sélectionner un vendeur',
         'product_name' => 'Nom du produit',
         'product_type' => 'Type de produit',
         'description' => 'Description',

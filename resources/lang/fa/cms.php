@@ -41,6 +41,7 @@ return [
         ],
         'vendors' => [
             'title' => 'فروشندگان',
+            'add_new' => 'افزودن جدید',
             'list' => 'لیست',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'سفارشات در انتظار',
             'completed_orders' => 'سفارشات تکمیل شده',
         ],
+        'pages' => [
+            'title' => 'صفحات',
+            'add_new' => 'جدید اضافه کنید',
+            'list' => 'لیست',
+        ],
+        'payments' => [
+            'title' => 'پرداخت‌ها',
+            'list' => 'لیست',
+        ],
+
+        'refunds' => [
+            'title' => 'بازپرداخت‌ها',
+            'list' => 'لیست',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'درگاه‌های پرداخت',
+            'list' => 'لیست',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'درگاه‌های پرداخت',
+        'edit_title' => 'ویرایش درگاه پرداخت',
+
+        // Table Headings
+        'id' => 'شناسه',
+        'name' => 'نام',
+        'code' => 'کد',
+        'status' => 'وضعیت',
+        'action' => 'عملیات',
+
+        // Status Labels
+        'active' => 'فعال',
+        'inactive' => 'غیرفعال',
+
+        // Delete Modal
+        'delete_confirm' => 'تأیید حذف',
+        'delete_message' => 'آیا مطمئن هستید که می‌خواهید این درگاه پرداخت را حذف کنید؟',
+        'cancel' => 'لغو',
+        'delete' => 'حذف',
+
+        // Alerts / Notifications
+        'success' => 'موفقیت',
+        'deleted' => 'حذف شد',
+        'delete_error' => 'خطا در حذف درگاه پرداخت!',
+
+        // Form Labels
+        'gateway_name' => 'نام درگاه',
+        'description' => 'توضیحات',
+        'active_label' => 'فعال',
+        'configurations' => 'تنظیمات درگاه',
+        'key_name' => 'نام کلید',
+        'key_value' => 'مقدار کلید',
+        'environment' => 'محیط',
+        'sandbox' => 'Sandbox',
+        'production' => 'Production',
+        'encrypted' => 'رمزگذاری شده',
+        'unique' => 'منحصر به فرد',
+        'update_button' => 'به‌روزرسانی',
+
+        // Fallback
+        'not_available' => 'N/A',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'بازپرداخت‌ها',
+        'details_title' => 'جزئیات بازپرداخت',
+
+        // Table Headings
+        'id' => 'شناسه',
+        'payment' => 'پرداخت',
+        'amount' => 'مبلغ',
+        'status' => 'وضعیت',
+        'reason' => 'دلیل',
+        'action' => 'عملیات',
+
+        // Status Labels
+        'completed' => 'تکمیل شد',
+        'pending' => 'در انتظار',
+        'failed' => 'ناموفق',
+
+        // Delete Modal
+        'delete_confirm' => 'تأیید حذف',
+        'delete_message' => 'آیا از حذف این بازپرداخت مطمئن هستید؟',
+        'cancel' => 'لغو',
+        'delete' => 'حذف',
+
+        // Alerts / Notifications
+        'success' => 'موفقیت',
+        'deleted' => 'حذف شد',
+        'delete_error' => 'خطا در حذف بازپرداخت!',
+
+        // Refund Details Page
+        'created_at' => 'تاریخ ایجاد',
+        'updated_at' => 'تاریخ بروزرسانی',
+        'back' => 'بازگشت به بازپرداخت‌ها',
+
+        // Fallback
+        'not_available' => 'موجود نیست',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'پرداخت‌ها',
+        'details_title' => 'جزئیات پرداخت',
+
+        // Table Headings
+        'id' => 'شناسه',
+        'order' => 'سفارش',
+        'user' => 'کاربر',
+        'gateway' => 'درگاه پرداخت',
+        'amount' => 'مبلغ',
+        'status' => 'وضعیت',
+        'transaction' => 'تراکنش',
+        'action' => 'عملیات',
+
+        // Status Labels
+        'completed' => 'تکمیل شده',
+        'pending' => 'در انتظار',
+        'failed' => 'ناموفق',
+
+        // Delete Modal
+        'delete_confirm' => 'تأیید حذف',
+        'delete_message' => 'آیا مطمئن هستید که می‌خواهید این پرداخت را حذف کنید؟',
+        'cancel' => 'انصراف',
+        'delete' => 'حذف',
+
+        // Alerts / Notifications
+        'success' => 'موفقیت',
+        'deleted' => 'حذف شد',
+        'delete_error' => 'خطا در حذف پرداخت!',
+
+        // Payment Details Page
+        'transaction_id' => 'شناسه تراکنش',
+        'created_at' => 'تاریخ ایجاد',
+        'back' => 'بازگشت به پرداخت‌ها',
+
+        // Fallback
+        'not_available' => 'ناموجود',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'صفحات',
+        'choose_file' => 'انتخاب فایل',
+
+        // Create Page
+        'create' => 'ایجاد صفحه',
+        'form_title' => 'عنوان (:code)',
+        'form_content' => 'محتوا (:code)',
+        'form_image' => 'تصویر (:code)',
+        'form_save' => 'ذخیره',
+
+        // Edit Page
+        'edit' => 'ویرایش صفحه',
+        'form_update' => 'به‌روزرسانی',
+
+        // Pages Table
+        'table_title' => 'عنوان',
+        'table_slug' => 'اسلاگ',
+        'table_status' => 'وضعیت',
+        'table_actions' => 'اقدامات',
+
+        // Delete Modal
+        'delete_modal_title' => 'تأیید حذف',
+        'delete_modal_text' => 'آیا مطمئن هستید که می‌خواهید این صفحه را حذف کنید؟',
+        'delete_modal_cancel' => 'انصراف',
+        'delete_modal_delete' => 'حذف',
+
+        // Toastr messages
+        'toastr_success' => 'موفقیت',
+        'toastr_error' => 'خطا در حذف صفحه',
+    ],
+
+    'customers' => [
+        'customer_list' => 'لیست مشتریان',
+
+        // Table columns
+        'id' => 'شناسه',
+        'name' => 'نام',
+        'email' => 'ایمیل',
+        'phone' => 'تلفن',
+        'address' => 'آدرس',
+        'status' => 'وضعیت',
+        'actions' => 'عملیات',
+
+        // Status labels
+        'active' => 'فعال',
+        'inactive' => 'غیرفعال',
+
+        // Modal
+        'confirm_delete_title' => 'تأیید حذف',
+        'confirm_delete_message' => 'آیا مطمئن هستید که می‌خواهید این مشتری را حذف کنید؟',
+        'cancel_button' => 'انصراف',
+        'delete_button' => 'حذف',
+
+        // Toastr messages
+        'success_title' => 'موفقیت',
+        'deleted_title' => 'حذف شد',
+        'delete_success_message' => 'مشتری با موفقیت حذف شد!',
+        'delete_error_message' => 'خطا در حذف مشتری!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'تلفن',
         'status' => 'وضعیت',
         'actions' => 'اقدامات',
+        'register_new_vendor' => 'ثبت فروشنده جدید',
+        'vendor_name' => 'نام فروشنده',
+        'vendor_email' => 'ایمیل فروشنده',
+        'phone_optional' => 'شماره تلفن (اختیاری)',
+        'password' => 'رمز عبور',
+        'confirm_password' => 'تأیید رمز عبور',
+        'status' => 'وضعیت',
+        'active' => 'فعال',
+        'inactive' => 'غیرفعال',
+        'banned' => 'مسدود',
+        'register_button' => 'ثبت فروشنده',
+        'cancel_button' => 'انصراف',
 
         'active' => 'فعال',
         'inactive' => 'غیرفعال',
@@ -184,6 +404,8 @@ return [
         'title_manage' => 'مدیریت محصولات',
 
         // Form Fields
+        'vendor' => 'فروشنده',
+        'select_vendor' => 'انتخاب فروشنده',
         'product_name' => 'نام محصول',
         'product_type' => 'نوع محصول',
         'description' => 'توضیحات',

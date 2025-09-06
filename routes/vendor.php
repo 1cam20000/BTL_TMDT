@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Vendor\Auth\AuthController;
 use App\Http\Controllers\Vendor\DashboardController;
 use App\Http\Controllers\Vendor\OrderController;
@@ -30,5 +31,8 @@ Route::prefix('vendor')->group(function () {
         Route::get('orders', [OrderController::class, 'index'])->name('vendor.orders.index');
         Route::post('orders/data', [OrderController::class, 'getData'])->name('vendor.orders.data');
         Route::delete('orders/{id}', [OrderController::class, 'destroy'])->name('vendor.orders.destroy');
+
+        /** Language Switch */
+        Route::post('/change-language', [LanguageController::class, 'changeLanguage'])->name('vendor.change.language');
     });
 });

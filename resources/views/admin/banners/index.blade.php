@@ -7,13 +7,11 @@
 @section('content')
     <div class="container">
 
-        <div class="card mt-4">
-            <div class="card-header card-header-bg text-white">
-                <h6 class="d-flex align-items-center mb-0 dt-heading">{{ __('cms.banners.all_banners') }}</h6>
-            </div>
-        </div>
-        <div class="card mt-4">
-            <div class="card-body">
+       <div class="card mt-4">
+    <div class="card-header card-header-bg text-white">
+        <h6 class="d-flex align-items-center mb-0 dt-heading">{{ __('cms.banners.all_banners') }}</h6>
+    </div>
+    <div class="card-body">
                 <table id="banners-table" class="table table-bordered">
                     <thead>
                         <tr>

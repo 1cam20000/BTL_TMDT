@@ -107,14 +107,14 @@ class CustomerController extends Controller
     /**
      * Delete a customer.
      */
-    public function destroy(Customer $customer)
+    public function destroy($id)
     {
-        try {
-            $customer->delete();
+        $customer = Customer::findOrFail($id);
+        $customer->delete();
 
-            return response()->json(['success' => true, 'message' => 'Customer has been successfully deleted.']);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'message' => 'There was an error deleting the customer. Please try again.']);
-        }
+        return response()->json([
+            'success' => true,
+            'message' => __('cms.customers.delete_success_message'),
+        ]);
     }
 }

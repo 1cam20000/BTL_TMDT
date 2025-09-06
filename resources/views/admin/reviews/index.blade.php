@@ -1,45 +1,34 @@
-
 @extends('admin.layouts.admin')
 
 @section('css')
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-    <!-- DataTables Buttons CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="card mt-4">
-        <div class="card-header card-header-bg text-white">
-            <h6>{{ __('cms.product_reviews.title_manage') }}</h6>
-        </div>
+<div class="card mt-4">
+    <div class="card-header card-header-bg text-white">
+        <h6 class="d-flex align-items-center mb-0 dt-heading">{{ __('cms.product_reviews.title_manage') }}</h6>
     </div>
-
-    <div class="card mt-4">
-        <div class="card-body">
-            @if(session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
-
-            <table id="reviews-table" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>{{ __('cms.product_reviews.review_id') }}</th>
-                        <th>{{ __('cms.product_reviews.customer_name') }}</th>
-                        <th>{{ __('cms.product_reviews.product_name') }}</th>
-                        <th>{{ __('cms.product_reviews.rating') }}</th>
-                        <th>{{ __('cms.product_reviews.status') }}</th>
-                        <th>{{ __('cms.product_reviews.actions') }}</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
+    <div class="card-body">
+        <table id="reviews-table" class="table table-bordered mt-4 dt-style">
+            <thead>
+                <tr>
+                    <th>{{ __('cms.product_reviews.review_id') }}</th>
+                    <th>{{ __('cms.product_reviews.customer_name') }}</th>
+                    <th>{{ __('cms.product_reviews.product_name') }}</th>
+                    <th>{{ __('cms.product_reviews.rating') }}</th>
+                    <th>{{ __('cms.product_reviews.status') }}</th>
+                    <th>{{ __('cms.product_reviews.actions') }}</th>
+                </tr>
+            </thead>
+        </table>
     </div>
 </div>
 
-<!-- Delete Product Review Modal -->
+<!-- Delete Review Modal -->
 <div class="modal fade" id="deleteReviewModal" tabindex="-1" aria-labelledby="deleteReviewModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -55,18 +44,14 @@
         </div>
     </div>
 </div>
-<!-- End Delete Product Review Modal -->
-
 @endsection
 
 @section('js')
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 @php
-    $datatableLang = __('cms.datatables'); // Get translation array
+    $datatableLang = __('cms.datatables'); 
 @endphp
 
 @if (session('success'))
@@ -81,74 +66,78 @@
 @endif
 
 <script>
-$('#reviews-table').DataTable({
-    processing: true,
-    serverSide: true,
-    ajax: {
-        url: "{{ route('admin.reviews.data') }}",
-        type: "GET" // Fix for 405 error
-    },
-    language: {!! json_encode($datatableLang) !!}, 
-    columns: [
-        { data: 'id', name: 'id' },
-        { data: 'customer_name', name: 'customer_name' },
-        { data: 'product_name', name: 'product_name' },
-        { data: 'rating', name: 'rating' },
-        { data: 'status', name: 'status' },
-        {
-            data: 'action',
-            orderable: false,
-            searchable: false,
-            render: function(data, type, row) {
-                var deleteBtn = '<span class="border border-danger dt-trash rounded-3 d-inline-block" onclick="deleteReview(' + row.id + ')"><i class="bi bi-trash-fill text-danger"></i></span>';
-                return deleteBtn;
-            }
-        }
-    ]
-});
-
-function deleteReview(id) {
-    $('#deleteReviewModal').modal('show');
-    $('#confirmDeleteReview').off('click').on('click', function() {
-        $.ajax({
-            url: '{{ route('admin.reviews.destroy', ':id') }}'.replace(':id', id),
-            method: 'DELETE',
-            data: {
-                _token: "{{ csrf_token() }}",
-            },
-            success: function(response) {
-                if (response.success) {
-                    // Reload the datatable and show success message
-                    $('#reviews-table').DataTable().ajax.reload();
-                    toastr.error(response.message, "Success", {
-                        closeButton: true,
-                        progressBar: true,
-                        positionClass: "toast-top-right",
-                        timeOut: 5000
-                    });
-                    $('#deleteReviewModal').modal('hide');
-                } else {
-                    toastr.error(response.message, "Error", {
-                        closeButton: true,
-                        progressBar: true,
-                        positionClass: "toast-top-right",
-                        timeOut: 5000
-                    });
+$(document).ready(function() {
+    $('#reviews-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ route('admin.reviews.data') }}",
+            type: "GET"
+        },
+        columns: [
+            { data: 'id', name: 'id' },
+            { data: 'customer_name', name: 'customer_name' },
+            { data: 'product_name', name: 'product_name' },
+            { data: 'rating', name: 'rating' },
+            { 
+                data: 'status',
+                name: 'status',
+                render: function(data) {
+                    return data === 'active' 
+                        ? '<span class="badge bg-success">{{ __('cms.product_reviews.active') }}</span>'
+                        : '<span class="badge bg-danger">{{ __('cms.product_reviews.inactive') }}</span>';
                 }
             },
-            error: function(xhr) {
-                // Error handling
-                toastr.error("Error deleting review! Please try again.", "Error", {
-                    closeButton: true,
-                    progressBar: true,
-                    positionClass: "toast-top-right",
-                    timeOut: 5000
-                });
-                $('#deleteReviewModal').modal('hide');
-            } 
-        });
+            { 
+                data: 'action',
+                orderable: false,
+                searchable: false,
+                render: function(data, type, row) {
+                    return `<span class="border border-danger dt-trash rounded-3 d-inline-block" 
+                                onclick="deleteReview(${row.id})">
+                                <i class="bi bi-trash-fill text-danger"></i>
+                            </span>`;
+                }
+            }
+        ],
+        pageLength: 10,
+        language: @json($datatableLang)
+    });
+});
+
+let reviewToDeleteId = null;
+
+function deleteReview(id) {
+    reviewToDeleteId = id;        
+    $('#deleteReviewModal').modal('show');
+
+    $('#confirmDeleteReview').off('click').on('click', function() {
+        if (reviewToDeleteId !== null) {
+            $.ajax({
+                url: '{{ route('admin.reviews.destroy', ':id') }}'.replace(':id', reviewToDeleteId),
+                method: 'DELETE',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                },
+                success: function(response) {
+                    if (response.success) {
+                        $('#reviews-table').DataTable().ajax.reload();
+                        toastr.error(response.message, "{{ __('cms.product_reviews.deleted') }}", {
+                            closeButton: true,
+                            progressBar: true,
+                            positionClass: "toast-top-right",
+                            timeOut: 5000
+                        });
+                        $('#deleteReviewModal').modal('hide');
+                    }
+                },
+                error: function() {
+                    toastr.error("{{ __('cms.product_reviews.error_delete') }}", "Error");
+                    $('#deleteReviewModal').modal('hide');
+                }
+            });
+        }
     });
 }
 </script>
-
 @endsection

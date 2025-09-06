@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'Vendedores',
+            'add_new' => 'Agregar nuevo',
             'list' => 'Lista',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'Pedidos pendientes',
             'completed_orders' => 'Pedidos completados',
         ],
+        'pages' => [
+            'title' => 'Páginas',
+            'add_new' => 'Agregar nuevo',
+            'list' => 'Lista',
+        ],
+        'payments' => [
+            'title' => 'Pagos',
+            'list' => 'Lista',
+        ],
+
+        'refunds' => [
+            'title' => 'Reembolsos',
+            'list' => 'Lista',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'Pasarelas de Pago',
+            'list' => 'Lista',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'Pasarelas de Pago',
+        'edit_title' => 'Editar Pasarela de Pago',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'Nombre',
+        'code' => 'Código',
+        'status' => 'Estado',
+        'action' => 'Acción',
+
+        // Status Labels
+        'active' => 'Activo',
+        'inactive' => 'Inactivo',
+
+        // Delete Modal
+        'delete_confirm' => 'Confirmar Eliminación',
+        'delete_message' => '¿Está seguro de que desea eliminar esta pasarela de pago?',
+        'cancel' => 'Cancelar',
+        'delete' => 'Eliminar',
+
+        // Alerts / Notifications
+        'success' => 'Éxito',
+        'deleted' => 'Eliminado',
+        'delete_error' => 'Error al eliminar la pasarela de pago!',
+
+        // Form Labels
+        'gateway_name' => 'Nombre de la Pasarela',
+        'description' => 'Descripción',
+        'active_label' => 'Activo',
+        'configurations' => 'Configuraciones de la Pasarela',
+        'key_name' => 'Nombre de Clave',
+        'key_value' => 'Valor de Clave',
+        'environment' => 'Entorno',
+        'sandbox' => 'Sandbox',
+        'production' => 'Producción',
+        'encrypted' => 'Encriptado',
+        'unique' => 'Único',
+        'update_button' => 'Actualizar',
+
+        // Fallback
+        'not_available' => 'N/A',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'Reembolsos',
+        'details_title' => 'Detalles del Reembolso',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => 'Pago',
+        'amount' => 'Monto',
+        'status' => 'Estado',
+        'reason' => 'Motivo',
+        'action' => 'Acción',
+
+        // Status Labels
+        'completed' => 'Completado',
+        'pending' => 'Pendiente',
+        'failed' => 'Fallido',
+
+        // Delete Modal
+        'delete_confirm' => 'Confirmar Eliminación',
+        'delete_message' => '¿Está seguro de que desea eliminar este reembolso?',
+        'cancel' => 'Cancelar',
+        'delete' => 'Eliminar',
+
+        // Alerts / Notifications
+        'success' => 'Éxito',
+        'deleted' => 'Eliminado',
+        'delete_error' => '¡Error al eliminar el reembolso!',
+
+        // Refund Details Page
+        'created_at' => 'Creado en',
+        'updated_at' => 'Actualizado en',
+        'back' => 'Volver a Reembolsos',
+
+        // Fallback
+        'not_available' => 'No disponible',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'Pagos',
+        'details_title' => 'Detalles del pago',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => 'Pedido',
+        'user' => 'Usuario',
+        'gateway' => 'Pasarela de pago',
+        'amount' => 'Monto',
+        'status' => 'Estado',
+        'transaction' => 'Transacción',
+        'action' => 'Acción',
+
+        // Status Labels
+        'completed' => 'Completado',
+        'pending' => 'Pendiente',
+        'failed' => 'Fallido',
+
+        // Delete Modal
+        'delete_confirm' => 'Confirmar eliminación',
+        'delete_message' => '¿Está seguro de que desea eliminar este pago?',
+        'cancel' => 'Cancelar',
+        'delete' => 'Eliminar',
+
+        // Alerts / Notifications
+        'success' => 'Éxito',
+        'deleted' => 'Eliminado',
+        'delete_error' => '¡Error al eliminar el pago!',
+
+        // Payment Details Page
+        'transaction_id' => 'ID de transacción',
+        'created_at' => 'Fecha de creación',
+        'back' => 'Volver a Pagos',
+
+        // Fallback
+        'not_available' => 'No disponible',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'Páginas',
+        'choose_file' => 'Elegir archivo',
+
+        // Create Page
+        'create' => 'Crear página',
+        'form_title' => 'Título (:code)',
+        'form_content' => 'Contenido (:code)',
+        'form_image' => 'Imagen (:code)',
+        'form_save' => 'Guardar',
+
+        // Edit Page
+        'edit' => 'Editar página',
+        'form_update' => 'Actualizar',
+
+        // Pages Table
+        'table_title' => 'Título',
+        'table_slug' => 'Slug',
+        'table_status' => 'Estado',
+        'table_actions' => 'Acciones',
+
+        // Delete Modal
+        'delete_modal_title' => 'Confirmar eliminación',
+        'delete_modal_text' => '¿Está seguro de que desea eliminar esta página?',
+        'delete_modal_cancel' => 'Cancelar',
+        'delete_modal_delete' => 'Eliminar',
+
+        // Toastr messages
+        'toastr_success' => 'Éxito',
+        'toastr_error' => 'Error al eliminar la página',
+    ],
+
+    'customers' => [
+        'customer_list' => 'Lista de clientes',
+
+        // Table columns
+        'id' => 'ID',
+        'name' => 'Nombre',
+        'email' => 'Correo electrónico',
+        'phone' => 'Teléfono',
+        'address' => 'Dirección',
+        'status' => 'Estado',
+        'actions' => 'Acciones',
+
+        // Status labels
+        'active' => 'Activo',
+        'inactive' => 'Inactivo',
+
+        // Modal
+        'confirm_delete_title' => 'Confirmar eliminación',
+        'confirm_delete_message' => '¿Está seguro de que desea eliminar a este cliente?',
+        'cancel_button' => 'Cancelar',
+        'delete_button' => 'Eliminar',
+
+        // Toastr messages
+        'success_title' => 'Éxito',
+        'deleted_title' => 'Eliminado',
+        'delete_success_message' => '¡Cliente eliminado con éxito!',
+        'delete_error_message' => '¡Error al eliminar al cliente!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'Teléfono',
         'status' => 'Estado',
         'actions' => 'Acciones',
+        'register_new_vendor' => 'Registrar nuevo vendedor',
+        'vendor_name' => 'Nombre del vendedor',
+        'vendor_email' => 'Correo electrónico del vendedor',
+        'phone_optional' => 'Teléfono (opcional)',
+        'password' => 'Contraseña',
+        'confirm_password' => 'Confirmar contraseña',
+        'status' => 'Estado',
+        'active' => 'Activo',
+        'inactive' => 'Inactivo',
+        'banned' => 'Bloqueado',
+        'register_button' => 'Registrar vendedor',
+        'cancel_button' => 'Cancelar',
 
         'active' => 'Activo',
         'inactive' => 'Inactivo',
@@ -184,6 +404,8 @@ return [
         'title_manage' => 'Gestionar Productos',
 
         // Form Fields
+        'vendor' => 'Vendedor',
+        'select_vendor' => 'Seleccionar Vendedor',
         'product_name' => 'Nombre del Producto',
         'product_type' => 'Tipo de Producto',
         'description' => 'Descripción',

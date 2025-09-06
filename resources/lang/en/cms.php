@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'Vendors',
+            'add_new' => 'Add New',
             'list' => 'List',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'Pending Orders',
             'completed_orders' => 'Completed Orders',
         ],
+        'pages' => [
+            'title' => 'Pages',
+            'add_new' => 'Add New',
+            'list' => 'List',
+        ],
+        'payments' => [
+            'title' => 'Payments',
+            'list' => 'List',
+        ],
+
+        'refunds' => [
+            'title' => 'Refunds',
+            'list' => 'List',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'Payment Gateways',
+            'list' => 'List',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'Payment Gateways',
+        'edit_title' => 'Edit Payment Gateway',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'Name',
+        'code' => 'Code',
+        'status' => 'Status',
+        'action' => 'Action',
+
+        // Status Labels
+        'active' => 'Active',
+        'inactive' => 'Inactive',
+
+        // Delete Modal
+        'delete_confirm' => 'Confirm Delete',
+        'delete_message' => 'Are you sure you want to delete this payment gateway?',
+        'cancel' => 'Cancel',
+        'delete' => 'Delete',
+
+        // Alerts / Notifications
+        'success' => 'Success',
+        'deleted' => 'Deleted',
+        'delete_error' => 'Error deleting payment gateway!',
+
+        // Form Labels
+        'gateway_name' => 'Gateway Name',
+        'description' => 'Description',
+        'active_label' => 'Active',
+        'configurations' => 'Gateway Configurations',
+        'key_name' => 'Key Name',
+        'key_value' => 'Key Value',
+        'environment' => 'Environment',
+        'sandbox' => 'Sandbox',
+        'production' => 'Production',
+        'encrypted' => 'Encrypted',
+        'unique' => 'unique',
+        'update_button' => 'Update',
+
+        // Fallback
+        'not_available' => 'N/A',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'Refunds',
+        'details_title' => 'Refund Details',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => 'Payment',
+        'amount' => 'Amount',
+        'status' => 'Status',
+        'reason' => 'Reason',
+        'action' => 'Action',
+
+        // Status Labels
+        'completed' => 'Completed',
+        'pending' => 'Pending',
+        'failed' => 'Failed',
+
+        // Delete Modal
+        'delete_confirm' => 'Confirm Delete',
+        'delete_message' => 'Are you sure you want to delete this refund?',
+        'cancel' => 'Cancel',
+        'delete' => 'Delete',
+
+        // Alerts / Notifications
+        'success' => 'Success',
+        'deleted' => 'Deleted',
+        'delete_error' => 'Error deleting refund!',
+
+        // Refund Details Page
+        'created_at' => 'Created At',
+        'updated_at' => 'Updated At',
+        'back' => 'Back to Refunds',
+
+        // Fallback
+        'not_available' => 'N/A',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'Payments',
+        'details_title' => 'Payment Details',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => 'Order',
+        'user' => 'User',
+        'gateway' => 'Gateway',
+        'amount' => 'Amount',
+        'status' => 'Status',
+        'transaction' => 'Transaction',
+        'action' => 'Action',
+
+        // Status Labels
+        'completed' => 'Completed',
+        'pending' => 'Pending',
+        'failed' => 'Failed',
+
+        // Delete Modal
+        'delete_confirm' => 'Confirm Delete',
+        'delete_message' => 'Are you sure you want to delete this payment?',
+        'cancel' => 'Cancel',
+        'delete' => 'Delete',
+
+        // Alerts / Notifications
+        'success' => 'Success',
+        'deleted' => 'Deleted',
+        'delete_error' => 'Error deleting payment!',
+
+        // Payment Details Page
+        'transaction_id' => 'Transaction ID',
+        'created_at' => 'Created At',
+        'back' => 'Back to Payments',
+
+        // Fallback
+        'not_available' => 'N/A',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'Pages',
+        'choose_file' => 'Choose File',
+
+        // Create Page
+        'create' => 'Create Page',
+        'form_title' => 'Title (:code)',
+        'form_content' => 'Content (:code)',
+        'form_image' => 'Image (:code)',
+        'form_save' => 'Save',
+
+        // Edit Page
+        'edit' => 'Edit Page',
+        'form_update' => 'Update',
+
+        // Pages Table
+        'table_title' => 'Title',
+        'table_slug' => 'Slug',
+        'table_status' => 'Status',
+        'table_actions' => 'Actions',
+
+        // Delete Modal
+        'delete_modal_title' => 'Confirm Deletion',
+        'delete_modal_text' => 'Are you sure you want to delete this page?',
+        'delete_modal_cancel' => 'Cancel',
+        'delete_modal_delete' => 'Delete',
+
+        // Toastr messages
+        'toastr_success' => 'Success',
+        'toastr_error' => 'Error deleting page',
+    ],
+
+    'customers' => [
+        'customer_list' => 'Customer List',
+
+        // Table columns
+        'id' => 'Id',
+        'name' => 'Name',
+        'email' => 'Email',
+        'phone' => 'Phone',
+        'address' => 'Address',
+        'status' => 'Status',
+        'actions' => 'Actions',
+
+        // Status labels
+        'active' => 'Active',
+        'inactive' => 'Inactive',
+
+        // Modal
+        'confirm_delete_title' => 'Confirm Delete',
+        'confirm_delete_message' => 'Are you sure you want to delete this customer?',
+        'cancel_button' => 'Cancel',
+        'delete_button' => 'Delete',
+
+        // Toastr messages
+        'success_title' => 'Success',
+        'deleted_title' => 'Deleted',
+        'delete_success_message' => 'Customer deleted successfully!',
+        'delete_error_message' => 'Error deleting customer!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'Phone',
         'status' => 'Status',
         'actions' => 'Actions',
+        'register_new_vendor' => 'Register New Vendor',
+        'vendor_name' => 'Vendor Name',
+        'vendor_email' => 'Vendor Email',
+        'phone_optional' => 'Phone (Optional)',
+        'password' => 'Password',
+        'confirm_password' => 'Confirm Password',
+        'status' => 'Status',
+        'active' => 'Active',
+        'inactive' => 'Inactive',
+        'banned' => 'Banned',
+        'register_button' => 'Register Vendor',
+        'cancel_button' => 'Cancel',
 
         'active' => 'Active',
         'inactive' => 'Inactive',
@@ -183,6 +403,8 @@ return [
         'title_manage' => 'Manage Products',
 
         // Form Fields
+        'vendor' => 'Vendor',
+        'select_vendor' => 'Select Vendor',
         'product_name' => 'Product Name',
         'product_type' => 'Product Type',
         'description' => 'Description',

@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'Penjual',
+            'add_new' => 'Tambah Baru',
             'list' => 'Daftar',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'Pesanan Tertunda',
             'completed_orders' => 'Pesanan Selesai',
         ],
+        'pages' => [
+            'title' => 'Halaman',
+            'add_new' => 'Tambah Baru',
+            'list' => 'Daftar',
+        ],
+        'payments' => [
+            'title' => 'Pembayaran',
+            'list' => 'Daftar',
+        ],
+
+        'refunds' => [
+            'title' => 'Pengembalian Dana',
+            'list' => 'Daftar',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'Gerbang Pembayaran',
+            'list' => 'Daftar',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'Gateway Pembayaran',
+        'edit_title' => 'Sunting Gateway Pembayaran',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'Nama',
+        'code' => 'Kode',
+        'status' => 'Status',
+        'action' => 'Aksi',
+
+        // Status Labels
+        'active' => 'Aktif',
+        'inactive' => 'Nonaktif',
+
+        // Delete Modal
+        'delete_confirm' => 'Konfirmasi Hapus',
+        'delete_message' => 'Apakah Anda yakin ingin menghapus gateway pembayaran ini?',
+        'cancel' => 'Batal',
+        'delete' => 'Hapus',
+
+        // Alerts / Notifications
+        'success' => 'Sukses',
+        'deleted' => 'Dihapus',
+        'delete_error' => 'Terjadi kesalahan saat menghapus gateway pembayaran!',
+
+        // Form Labels
+        'gateway_name' => 'Nama Gateway',
+        'description' => 'Deskripsi',
+        'active_label' => 'Aktif',
+        'configurations' => 'Konfigurasi Gateway',
+        'key_name' => 'Nama Kunci',
+        'key_value' => 'Nilai Kunci',
+        'environment' => 'Lingkungan',
+        'sandbox' => 'Sandbox',
+        'production' => 'Produksi',
+        'encrypted' => 'Terenkripsi',
+        'unique' => 'Unik',
+        'update_button' => 'Perbarui',
+
+        // Fallback
+        'not_available' => 'Tidak Tersedia',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'Pengembalian Dana',
+        'details_title' => 'Detail Pengembalian Dana',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => 'Pembayaran',
+        'amount' => 'Jumlah',
+        'status' => 'Status',
+        'reason' => 'Alasan',
+        'action' => 'Aksi',
+
+        // Status Labels
+        'completed' => 'Selesai',
+        'pending' => 'Menunggu',
+        'failed' => 'Gagal',
+
+        // Delete Modal
+        'delete_confirm' => 'Konfirmasi Hapus',
+        'delete_message' => 'Apakah Anda yakin ingin menghapus pengembalian dana ini?',
+        'cancel' => 'Batal',
+        'delete' => 'Hapus',
+
+        // Alerts / Notifications
+        'success' => 'Sukses',
+        'deleted' => 'Dihapus',
+        'delete_error' => 'Terjadi kesalahan saat menghapus pengembalian dana!',
+
+        // Refund Details Page
+        'created_at' => 'Dibuat Pada',
+        'updated_at' => 'Diperbarui Pada',
+        'back' => 'Kembali ke Pengembalian Dana',
+
+        // Fallback
+        'not_available' => 'Tidak Tersedia',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'Pembayaran',
+        'details_title' => 'Detail Pembayaran',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => 'Pesanan',
+        'user' => 'Pengguna',
+        'gateway' => 'Gateway Pembayaran',
+        'amount' => 'Jumlah',
+        'status' => 'Status',
+        'transaction' => 'Transaksi',
+        'action' => 'Aksi',
+
+        // Status Labels
+        'completed' => 'Selesai',
+        'pending' => 'Tertunda',
+        'failed' => 'Gagal',
+
+        // Delete Modal
+        'delete_confirm' => 'Konfirmasi Hapus',
+        'delete_message' => 'Apakah Anda yakin ingin menghapus pembayaran ini?',
+        'cancel' => 'Batal',
+        'delete' => 'Hapus',
+
+        // Alerts / Notifications
+        'success' => 'Berhasil',
+        'deleted' => 'Dihapus',
+        'delete_error' => 'Terjadi kesalahan saat menghapus pembayaran!',
+
+        // Payment Details Page
+        'transaction_id' => 'ID Transaksi',
+        'created_at' => 'Tanggal Dibuat',
+        'back' => 'Kembali ke Pembayaran',
+
+        // Fallback
+        'not_available' => 'Tidak tersedia',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'Halaman',
+        'choose_file' => 'Pilih File',
+
+        // Create Page
+        'create' => 'Buat Halaman',
+        'form_title' => 'Judul (:code)',
+        'form_content' => 'Konten (:code)',
+        'form_image' => 'Gambar (:code)',
+        'form_save' => 'Simpan',
+
+        // Edit Page
+        'edit' => 'Edit Halaman',
+        'form_update' => 'Perbarui',
+
+        // Pages Table
+        'table_title' => 'Judul',
+        'table_slug' => 'Slug',
+        'table_status' => 'Status',
+        'table_actions' => 'Aksi',
+
+        // Delete Modal
+        'delete_modal_title' => 'Konfirmasi Penghapusan',
+        'delete_modal_text' => 'Apakah Anda yakin ingin menghapus halaman ini?',
+        'delete_modal_cancel' => 'Batal',
+        'delete_modal_delete' => 'Hapus',
+
+        // Toastr messages
+        'toastr_success' => 'Sukses',
+        'toastr_error' => 'Gagal menghapus halaman',
+    ],
+
+    'customers' => [
+        'customer_list' => 'Daftar Pelanggan',
+
+        // Table columns
+        'id' => 'ID',
+        'name' => 'Nama',
+        'email' => 'Email',
+        'phone' => 'Telepon',
+        'address' => 'Alamat',
+        'status' => 'Status',
+        'actions' => 'Aksi',
+
+        // Status labels
+        'active' => 'Aktif',
+        'inactive' => 'Tidak Aktif',
+
+        // Modal
+        'confirm_delete_title' => 'Konfirmasi Hapus',
+        'confirm_delete_message' => 'Apakah Anda yakin ingin menghapus pelanggan ini?',
+        'cancel_button' => 'Batal',
+        'delete_button' => 'Hapus',
+
+        // Toastr messages
+        'success_title' => 'Berhasil',
+        'deleted_title' => 'Dihapus',
+        'delete_success_message' => 'Pelanggan berhasil dihapus!',
+        'delete_error_message' => 'Terjadi kesalahan saat menghapus pelanggan!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'Telepon',
         'status' => 'Status',
         'actions' => 'Aksi',
+        'register_new_vendor' => 'Daftarkan Vendor Baru',
+        'vendor_name' => 'Nama Vendor',
+        'vendor_email' => 'Email Vendor',
+        'phone_optional' => 'Telepon (Opsional)',
+        'password' => 'Kata Sandi',
+        'confirm_password' => 'Konfirmasi Kata Sandi',
+        'status' => 'Status',
+        'active' => 'Aktif',
+        'inactive' => 'Tidak Aktif',
+        'banned' => 'Diblokir',
+        'register_button' => 'Daftarkan Vendor',
+        'cancel_button' => 'Batal',
 
         'active' => 'Aktif',
         'inactive' => 'Tidak Aktif',
@@ -184,6 +404,8 @@ return [
         'title_manage' => 'Kelola Produk',
 
         // Bidang Formulir
+        'vendor' => 'Penjual',
+        'select_vendor' => 'Pilih Penjual',
         'product_name' => 'Nama Produk',
         'product_type' => 'Tipe Produk',
         'description' => 'Deskripsi',

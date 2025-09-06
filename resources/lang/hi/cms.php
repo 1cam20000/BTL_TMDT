@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'विक्रेताओं',
+            'add_new' => 'नया जोड़ें',
             'list' => 'सूची',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'लंबित ऑर्डर',
             'completed_orders' => 'पूर्ण ऑर्डर',
         ],
+        'pages' => [
+            'title' => 'पृष्ठ',
+            'add_new' => 'नया जोड़ें',
+            'list' => 'सूची',
+        ],
+        'payments' => [
+            'title' => 'भुगतान',
+            'list' => 'सूची',
+        ],
+
+        'refunds' => [
+            'title' => 'रिफ़ंड',
+            'list' => 'सूची',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'भुगतान गेटवे',
+            'list' => 'सूची',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'भुगतान गेटवे',
+        'edit_title' => 'भुगतान गेटवे संपादित करें',
+
+        // Table Headings
+        'id' => 'आईडी',
+        'name' => 'नाम',
+        'code' => 'कोड',
+        'status' => 'स्थिति',
+        'action' => 'कार्रवाई',
+
+        // Status Labels
+        'active' => 'सक्रिय',
+        'inactive' => 'निष्क्रिय',
+
+        // Delete Modal
+        'delete_confirm' => 'हटाने की पुष्टि करें',
+        'delete_message' => 'क्या आप वाकई इस भुगतान गेटवे को हटाना चाहते हैं?',
+        'cancel' => 'रद्द करें',
+        'delete' => 'हटाएँ',
+
+        // Alerts / Notifications
+        'success' => 'सफल',
+        'deleted' => 'हटाया गया',
+        'delete_error' => 'भुगतान गेटवे हटाने में त्रुटि!',
+
+        // Form Labels
+        'gateway_name' => 'गेटवे का नाम',
+        'description' => 'विवरण',
+        'active_label' => 'सक्रिय',
+        'configurations' => 'गेटवे कॉन्फ़िगरेशन',
+        'key_name' => 'कुंजी नाम',
+        'key_value' => 'कुंजी मान',
+        'environment' => 'पर्यावरण',
+        'sandbox' => 'सैंडबॉक्स',
+        'production' => 'उत्पादन',
+        'encrypted' => 'एन्क्रिप्टेड',
+        'unique' => 'अद्वितीय',
+        'update_button' => 'अद्यतन करें',
+
+        // Fallback
+        'not_available' => 'उपलब्ध नहीं',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'रिफंड',
+        'details_title' => 'रिफंड विवरण',
+
+        // Table Headings
+        'id' => 'आईडी',
+        'payment' => 'भुगतान',
+        'amount' => 'राशि',
+        'status' => 'स्थिति',
+        'reason' => 'कारण',
+        'action' => 'क्रिया',
+
+        // Status Labels
+        'completed' => 'पूर्ण',
+        'pending' => 'प्रतीक्षारत',
+        'failed' => 'विफल',
+
+        // Delete Modal
+        'delete_confirm' => 'हटाने की पुष्टि करें',
+        'delete_message' => 'क्या आप वाकई इस रिफंड को हटाना चाहते हैं?',
+        'cancel' => 'रद्द करें',
+        'delete' => 'हटाएं',
+
+        // Alerts / Notifications
+        'success' => 'सफल',
+        'deleted' => 'हटाया गया',
+        'delete_error' => 'रिफंड हटाने में त्रुटि!',
+
+        // Refund Details Page
+        'created_at' => 'निर्मित दिनांक',
+        'updated_at' => 'अपडेट किया गया दिनांक',
+        'back' => 'रिफंड पर वापस जाएँ',
+
+        // Fallback
+        'not_available' => 'उपलब्ध नहीं',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'भुगतान',
+        'details_title' => 'भुगतान विवरण',
+
+        // Table Headings
+        'id' => 'आईडी',
+        'order' => 'आर्डर',
+        'user' => 'उपयोगकर्ता',
+        'gateway' => 'पेमेंट गेटवे',
+        'amount' => 'राशि',
+        'status' => 'स्थिति',
+        'transaction' => 'लेन-देन',
+        'action' => 'क्रिया',
+
+        // Status Labels
+        'completed' => 'पूर्ण',
+        'pending' => 'लंबित',
+        'failed' => 'असफल',
+
+        // Delete Modal
+        'delete_confirm' => 'हटाने की पुष्टि करें',
+        'delete_message' => 'क्या आप वाकई इस भुगतान को हटाना चाहते हैं?',
+        'cancel' => 'रद्द करें',
+        'delete' => 'हटाएँ',
+
+        // Alerts / Notifications
+        'success' => 'सफलता',
+        'deleted' => 'हटा दिया गया',
+        'delete_error' => 'भुगतान हटाने में त्रुटि!',
+
+        // Payment Details Page
+        'transaction_id' => 'लेन-देन आईडी',
+        'created_at' => 'बनाने की तिथि',
+        'back' => 'भुगतान पर वापस जाएँ',
+
+        // Fallback
+        'not_available' => 'उपलब्ध नहीं',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'पृष्ठ',
+        'choose_file' => 'फ़ाइल चुनें',
+
+        // Create Page
+        'create' => 'पृष्ठ बनाएँ',
+        'form_title' => 'शीर्षक (:code)',
+        'form_content' => 'सामग्री (:code)',
+        'form_image' => 'छवि (:code)',
+        'form_save' => 'सहेजें',
+
+        // Edit Page
+        'edit' => 'पृष्ठ संपादित करें',
+        'form_update' => 'अद्यतन करें',
+
+        // Pages Table
+        'table_title' => 'शीर्षक',
+        'table_slug' => 'स्लग',
+        'table_status' => 'स्थिति',
+        'table_actions' => 'क्रियाएँ',
+
+        // Delete Modal
+        'delete_modal_title' => 'हटाने की पुष्टि करें',
+        'delete_modal_text' => 'क्या आप वाकई इस पृष्ठ को हटाना चाहते हैं?',
+        'delete_modal_cancel' => 'रद्द करें',
+        'delete_modal_delete' => 'हटाएँ',
+
+        // Toastr messages
+        'toastr_success' => 'सफलता',
+        'toastr_error' => 'पृष्ठ हटाने में त्रुटि',
+    ],
+
+    'customers' => [
+        'customer_list' => 'ग्राहक सूची',
+
+        // Table columns
+        'id' => 'आईडी',
+        'name' => 'नाम',
+        'email' => 'ईमेल',
+        'phone' => 'फ़ोन',
+        'address' => 'पता',
+        'status' => 'स्थिति',
+        'actions' => 'क्रियाएँ',
+
+        // Status labels
+        'active' => 'सक्रिय',
+        'inactive' => 'निष्क्रिय',
+
+        // Modal
+        'confirm_delete_title' => 'हटाने की पुष्टि करें',
+        'confirm_delete_message' => 'क्या आप वाकई इस ग्राहक को हटाना चाहते हैं?',
+        'cancel_button' => 'रद्द करें',
+        'delete_button' => 'हटाएँ',
+
+        // Toastr messages
+        'success_title' => 'सफलता',
+        'deleted_title' => 'हटा दिया गया',
+        'delete_success_message' => 'ग्राहक सफलतापूर्वक हटा दिया गया!',
+        'delete_error_message' => 'ग्राहक को हटाने में त्रुटि!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'फोन',
         'status' => 'स्थिति',
         'actions' => 'क्रियाएं',
+        'register_new_vendor' => 'नए विक्रेता को पंजीकृत करें',
+        'vendor_name' => 'विक्रेता का नाम',
+        'vendor_email' => 'विक्रेता का ईमेल',
+        'phone_optional' => 'फ़ोन (वैकल्पिक)',
+        'password' => 'पासवर्ड',
+        'confirm_password' => 'पासवर्ड की पुष्टि करें',
+        'status' => 'स्थिति',
+        'active' => 'सक्रिय',
+        'inactive' => 'निष्क्रिय',
+        'banned' => 'प्रतिबंधित',
+        'register_button' => 'विक्रेता पंजीकृत करें',
+        'cancel_button' => 'रद्द करें',
 
         'active' => 'सक्रिय',
         'inactive' => 'निष्क्रिय',
@@ -184,6 +404,8 @@ return [
         'title_manage' => 'प्रोडक्ट प्रबंधन',
 
         // फॉर्म फ़ील्ड्स
+        'vendor' => 'विक्रेता',
+        'select_vendor' => 'विक्रेता चुनें',
         'product_name' => 'प्रोडक्ट का नाम',
         'product_type' => 'प्रोडक्ट का प्रकार',
         'description' => 'विवरण',

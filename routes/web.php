@@ -10,9 +10,13 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\MenuItemController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\PaymentGatewayConfigController;
+use App\Http\Controllers\Admin\PaymentGatewayController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductReviewController;
 use App\Http\Controllers\Admin\ProductVariantController;
+use App\Http\Controllers\Admin\RefundController;
 use App\Http\Controllers\Admin\SocialMediaLinkController;
 use App\Http\Controllers\Admin\VendorController;
 use App\Http\Controllers\SiteSettingsController;
@@ -115,11 +119,34 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('vendors', [VendorController::class, 'index'])->name('vendors.index');
     Route::get('vendors/data', [VendorController::class, 'getVendorData'])->name('vendors.data');
     Route::delete('vendors/{id}', [VendorController::class, 'destroy'])->name('vendors.destroy');
+    Route::get('vendors/create', [VendorController::class, 'create'])->name('vendors.create');
+    Route::post('vendors', [VendorController::class, 'store'])->name('vendors.store');
 
     /* Pages */
     Route::resource('pages', PageController::class);
     Route::post('pages/update-status', [PageController::class, 'updatePageStatus'])->name('pages.updateStatus');
     Route::post('pages/data', [PageController::class, 'data'])->name('pages.data');
+
+    /* payments */
+    Route::get('payments/get-data', [PaymentController::class, 'getData'])->name('payments.getData');
+    Route::resource('payments', PaymentController::class)->only(['index', 'destroy', 'show']);
+
+    /* Refunds */
+    Route::get('refunds', [RefundController::class, 'index'])->name('refunds.index');
+    Route::get('refunds/data', [RefundController::class, 'getData'])->name('refunds.getData');
+    Route::delete('refunds/{refund}', [RefundController::class, 'destroy'])->name('refunds.destroy');
+    Route::get('refunds/{refund}', [RefundController::class, 'show'])->name('refunds.show');
+
+    /* Payment Gateways */
+    Route::get('payment-gateways', [PaymentGatewayController::class, 'index'])->name('payment-gateways.index');
+    Route::get('payment-gateways/data', [PaymentGatewayController::class, 'getData'])->name('payment-gateways.getData');
+    Route::get('payment-gateways/{paymentGateway}/edit', [PaymentGatewayController::class, 'edit'])->name('payment-gateways.edit');
+    Route::put('payment-gateways/{paymentGateway}', [PaymentGatewayController::class, 'update'])->name('payment-gateways.update');
+    Route::delete('payment-gateways/{paymentGateway}', [PaymentGatewayController::class, 'destroy'])->name('payment-gateways.destroy');
+
+    /* Payment Gateways Configs */
+    Route::get('payment_gateway_configs/getData', [PaymentGatewayConfigController::class, 'getData'])->name('payment_gateway_configs.getData');
+    Route::resource('payment_gateway_configs', PaymentGatewayConfigController::class)->except(['show']);
 });
 
 Route::get('site-settings', [SiteSettingsController::class, 'index'])->name('site-settings.index');

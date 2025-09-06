@@ -73,9 +73,9 @@
                 </div>
                 <div class="row mt-4">
                 <div class="col-md-6">
-                    <label class="form-label">Vendor</label>
+                    <label class="form-label">{{ __('cms.products.vendor') }}</label>
                     <select name="vendor_id" class="form-control" required>
-                        <option value="">Select Vendor</option>
+                        <option value="">{{ __('cms.products.select_vendor') }}</option>
                         @foreach($vendors as $vendor)
                             <option value="{{ $vendor->id }}">{{ $vendor->name }}</option>
                         @endforeach

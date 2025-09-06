@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'البائعون',
+            'add_new' => 'إضافة جديد',
             'list' => 'القائمة',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'الطلبات المعلقة',
             'completed_orders' => 'الطلبات المكتملة',
         ],
+        'pages' => [
+            'title' => 'الصفحات',
+            'add_new' => 'إضافة جديد',
+            'list' => 'قائمة',
+        ],
+        'payments' => [
+            'title' => 'المدفوعات',
+            'list' => 'القائمة',
+        ],
+
+        'refunds' => [
+            'title' => 'المبالغ المستردة',
+            'list' => 'القائمة',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'بوابات الدفع',
+            'list' => 'القائمة',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'بوابات الدفع',
+        'edit_title' => 'تعديل بوابة الدفع',
+
+        // Table Headings
+        'id' => 'المعرف',
+        'name' => 'الاسم',
+        'code' => 'الرمز',
+        'status' => 'الحالة',
+        'action' => 'إجراء',
+
+        // Status Labels
+        'active' => 'نشط',
+        'inactive' => 'غير نشط',
+
+        // Delete Modal
+        'delete_confirm' => 'تأكيد الحذف',
+        'delete_message' => 'هل أنت متأكد أنك تريد حذف بوابة الدفع هذه؟',
+        'cancel' => 'إلغاء',
+        'delete' => 'حذف',
+
+        // Alerts / Notifications
+        'success' => 'تم بنجاح',
+        'deleted' => 'تم الحذف',
+        'delete_error' => 'خطأ في حذف بوابة الدفع!',
+
+        // Form Labels
+        'gateway_name' => 'اسم البوابة',
+        'description' => 'الوصف',
+        'active_label' => 'نشط',
+        'configurations' => 'إعدادات البوابة',
+        'key_name' => 'اسم المفتاح',
+        'key_value' => 'قيمة المفتاح',
+        'environment' => 'البيئة',
+        'sandbox' => 'صندوق الاختبار',
+        'production' => 'الإنتاج',
+        'encrypted' => 'مشفر',
+        'unique' => 'فريد',
+        'update_button' => 'تحديث',
+
+        // Fallback
+        'not_available' => 'غير متاح',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'المبالغ المستردة',
+        'details_title' => 'تفاصيل المبلغ المسترد',
+
+        // Table Headings
+        'id' => 'المعرف',
+        'payment' => 'الدفع',
+        'amount' => 'المبلغ',
+        'status' => 'الحالة',
+        'reason' => 'السبب',
+        'action' => 'الإجراء',
+
+        // Status Labels
+        'completed' => 'مكتمل',
+        'pending' => 'قيد الانتظار',
+        'failed' => 'فشل',
+
+        // Delete Modal
+        'delete_confirm' => 'تأكيد الحذف',
+        'delete_message' => 'هل أنت متأكد من حذف هذا المبلغ المسترد؟',
+        'cancel' => 'إلغاء',
+        'delete' => 'حذف',
+
+        // Alerts / Notifications
+        'success' => 'نجاح',
+        'deleted' => 'تم الحذف',
+        'delete_error' => 'حدث خطأ أثناء حذف المبلغ المسترد!',
+
+        // Refund Details Page
+        'created_at' => 'تاريخ الإنشاء',
+        'updated_at' => 'تاريخ التحديث',
+        'back' => 'العودة إلى المبالغ المستردة',
+
+        // Fallback
+        'not_available' => 'غير متوفر',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'المدفوعات',
+        'details_title' => 'تفاصيل الدفع',
+
+        // Table Headings
+        'id' => 'المعرف',
+        'order' => 'الطلب',
+        'user' => 'المستخدم',
+        'gateway' => 'بوابة الدفع',
+        'amount' => 'المبلغ',
+        'status' => 'الحالة',
+        'transaction' => 'المعاملة',
+        'action' => 'الإجراء',
+
+        // Status Labels
+        'completed' => 'مكتمل',
+        'pending' => 'قيد الانتظار',
+        'failed' => 'فشل',
+
+        // Delete Modal
+        'delete_confirm' => 'تأكيد الحذف',
+        'delete_message' => 'هل أنت متأكد أنك تريد حذف هذا الدفع؟',
+        'cancel' => 'إلغاء',
+        'delete' => 'حذف',
+
+        // Alerts / Notifications
+        'success' => 'نجاح',
+        'deleted' => 'تم الحذف',
+        'delete_error' => 'حدث خطأ أثناء حذف الدفع!',
+
+        // Payment Details Page
+        'transaction_id' => 'معرّف المعاملة',
+        'created_at' => 'تاريخ الإنشاء',
+        'back' => 'العودة إلى المدفوعات',
+
+        // Fallback
+        'not_available' => 'غير متوفر',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'الصفحات',
+        'choose_file' => 'اختر ملف',
+
+        // Create Page
+        'create' => 'إنشاء صفحة',
+        'form_title' => 'العنوان (:code)',
+        'form_content' => 'المحتوى (:code)',
+        'form_image' => 'الصورة (:code)',
+        'form_save' => 'حفظ',
+
+        // Edit Page
+        'edit' => 'تعديل الصفحة',
+        'form_update' => 'تحديث',
+
+        // Pages Table
+        'table_title' => 'العنوان',
+        'table_slug' => 'الرابط المختصر',
+        'table_status' => 'الحالة',
+        'table_actions' => 'الإجراءات',
+
+        // Delete Modal
+        'delete_modal_title' => 'تأكيد الحذف',
+        'delete_modal_text' => 'هل أنت متأكد أنك تريد حذف هذه الصفحة؟',
+        'delete_modal_cancel' => 'إلغاء',
+        'delete_modal_delete' => 'حذف',
+
+        // Toastr messages
+        'toastr_success' => 'تم بنجاح',
+        'toastr_error' => 'حدث خطأ أثناء حذف الصفحة',
+    ],
+
+    'customers' => [
+        'customer_list' => 'قائمة العملاء',
+
+        // Table columns
+        'id' => 'المعرف',
+        'name' => 'الاسم',
+        'email' => 'البريد الإلكتروني',
+        'phone' => 'رقم الهاتف',
+        'address' => 'العنوان',
+        'status' => 'الحالة',
+        'actions' => 'الإجراءات',
+
+        // Status labels
+        'active' => 'نشط',
+        'inactive' => 'غير نشط',
+
+        // Modal
+        'confirm_delete_title' => 'تأكيد الحذف',
+        'confirm_delete_message' => 'هل أنت متأكد أنك تريد حذف هذا العميل؟',
+        'cancel_button' => 'إلغاء',
+        'delete_button' => 'حذف',
+
+        // Toastr messages
+        'success_title' => 'نجاح',
+        'deleted_title' => 'تم الحذف',
+        'delete_success_message' => 'تم حذف العميل بنجاح!',
+        'delete_error_message' => 'حدث خطأ أثناء حذف العميل!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'رقم الهاتف',
         'status' => 'الحالة',
         'actions' => 'الإجراءات',
+        'register_new_vendor' => 'تسجيل بائع جديد',
+        'vendor_name' => 'اسم البائع',
+        'vendor_email' => 'البريد الإلكتروني للبائع',
+        'phone_optional' => 'الهاتف (اختياري)',
+        'password' => 'كلمة المرور',
+        'confirm_password' => 'تأكيد كلمة المرور',
+        'status' => 'الحالة',
+        'active' => 'نشط',
+        'inactive' => 'غير نشط',
+        'banned' => 'محظور',
+        'register_button' => 'تسجيل البائع',
+        'cancel_button' => 'إلغاء',
 
         'active' => 'نشط',
         'inactive' => 'غير نشط',
@@ -185,6 +405,8 @@ return [
         'title_manage' => 'إدارة المنتجات',
 
         // Form Fields
+        'vendor' => 'البائع',
+        'select_vendor' => 'اختر البائع',
         'product_name' => 'اسم المنتج',
         'product_type' => 'نوع المنتج',
         'description' => 'الوصف',

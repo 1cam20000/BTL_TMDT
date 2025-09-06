@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'Dostawcy',
+            'add_new' => 'Dodaj nowy',
             'list' => 'Lista',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'Oczekujące zamówienia',
             'completed_orders' => 'Zrealizowane zamówienia',
         ],
+        'pages' => [
+            'title' => 'Strony',
+            'add_new' => 'Dodaj nową',
+            'list' => 'Lista',
+        ],
+        'payments' => [
+            'title' => 'Płatności',
+            'list' => 'Lista',
+        ],
+
+        'refunds' => [
+            'title' => 'Zwroty',
+            'list' => 'Lista',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'Bramki płatności',
+            'list' => 'Lista',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'Bramki Płatności',
+        'edit_title' => 'Edytuj Bramkę Płatności',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'Nazwa',
+        'code' => 'Kod',
+        'status' => 'Status',
+        'action' => 'Akcja',
+
+        // Status Labels
+        'active' => 'Aktywna',
+        'inactive' => 'Nieaktywna',
+
+        // Delete Modal
+        'delete_confirm' => 'Potwierdź Usunięcie',
+        'delete_message' => 'Czy na pewno chcesz usunąć tę bramkę płatności?',
+        'cancel' => 'Anuluj',
+        'delete' => 'Usuń',
+
+        // Alerts / Notifications
+        'success' => 'Sukces',
+        'deleted' => 'Usunięto',
+        'delete_error' => 'Błąd podczas usuwania bramki płatności!',
+
+        // Form Labels
+        'gateway_name' => 'Nazwa Bramki',
+        'description' => 'Opis',
+        'active_label' => 'Aktywna',
+        'configurations' => 'Konfiguracje Bramki',
+        'key_name' => 'Nazwa Klucza',
+        'key_value' => 'Wartość Klucza',
+        'environment' => 'Środowisko',
+        'sandbox' => 'Sandbox',
+        'production' => 'Produkcja',
+        'encrypted' => 'Zaszyfrowany',
+        'unique' => 'Unikalny',
+        'update_button' => 'Aktualizuj',
+
+        // Fallback
+        'not_available' => 'Niedostępne',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'Zwroty',
+        'details_title' => 'Szczegóły zwrotu',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => 'Płatność',
+        'amount' => 'Kwota',
+        'status' => 'Status',
+        'reason' => 'Powód',
+        'action' => 'Akcja',
+
+        // Status Labels
+        'completed' => 'Zakończono',
+        'pending' => 'Oczekujące',
+        'failed' => 'Niepowodzenie',
+
+        // Delete Modal
+        'delete_confirm' => 'Potwierdź usunięcie',
+        'delete_message' => 'Czy na pewno chcesz usunąć ten zwrot?',
+        'cancel' => 'Anuluj',
+        'delete' => 'Usuń',
+
+        // Alerts / Notifications
+        'success' => 'Sukces',
+        'deleted' => 'Usunięto',
+        'delete_error' => 'Błąd podczas usuwania zwrotu!',
+
+        // Refund Details Page
+        'created_at' => 'Utworzono',
+        'updated_at' => 'Zaktualizowano',
+        'back' => 'Powrót do zwrotów',
+
+        // Fallback
+        'not_available' => 'Niedostępne',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'Płatności',
+        'details_title' => 'Szczegóły płatności',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => 'Zamówienie',
+        'user' => 'Użytkownik',
+        'gateway' => 'Brama płatności',
+        'amount' => 'Kwota',
+        'status' => 'Status',
+        'transaction' => 'Transakcja',
+        'action' => 'Akcja',
+
+        // Status Labels
+        'completed' => 'Zakończono',
+        'pending' => 'Oczekujące',
+        'failed' => 'Niepowodzenie',
+
+        // Delete Modal
+        'delete_confirm' => 'Potwierdź usunięcie',
+        'delete_message' => 'Czy na pewno chcesz usunąć tę płatność?',
+        'cancel' => 'Anuluj',
+        'delete' => 'Usuń',
+
+        // Alerts / Notifications
+        'success' => 'Sukces',
+        'deleted' => 'Usunięto',
+        'delete_error' => 'Błąd podczas usuwania płatności!',
+
+        // Payment Details Page
+        'transaction_id' => 'ID transakcji',
+        'created_at' => 'Utworzono',
+        'back' => 'Powrót do płatności',
+
+        // Fallback
+        'not_available' => 'Niedostępne',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'Strony',
+        'choose_file' => 'Wybierz plik',
+
+        // Create Page
+        'create' => 'Utwórz stronę',
+        'form_title' => 'Tytuł (:code)',
+        'form_content' => 'Treść (:code)',
+        'form_image' => 'Obraz (:code)',
+        'form_save' => 'Zapisz',
+
+        // Edit Page
+        'edit' => 'Edytuj stronę',
+        'form_update' => 'Aktualizuj',
+
+        // Pages Table
+        'table_title' => 'Tytuł',
+        'table_slug' => 'Slug',
+        'table_status' => 'Status',
+        'table_actions' => 'Akcje',
+
+        // Delete Modal
+        'delete_modal_title' => 'Potwierdź usunięcie',
+        'delete_modal_text' => 'Czy na pewno chcesz usunąć tę stronę?',
+        'delete_modal_cancel' => 'Anuluj',
+        'delete_modal_delete' => 'Usuń',
+
+        // Toastr messages
+        'toastr_success' => 'Sukces',
+        'toastr_error' => 'Błąd podczas usuwania strony',
+    ],
+
+    'customers' => [
+        'customer_list' => 'Lista klientów',
+
+        // Table columns
+        'id' => 'ID',
+        'name' => 'Nazwa',
+        'email' => 'E-mail',
+        'phone' => 'Telefon',
+        'address' => 'Adres',
+        'status' => 'Status',
+        'actions' => 'Akcje',
+
+        // Status labels
+        'active' => 'Aktywny',
+        'inactive' => 'Nieaktywny',
+
+        // Modal
+        'confirm_delete_title' => 'Potwierdź usunięcie',
+        'confirm_delete_message' => 'Czy na pewno chcesz usunąć tego klienta?',
+        'cancel_button' => 'Anuluj',
+        'delete_button' => 'Usuń',
+
+        // Toastr messages
+        'success_title' => 'Sukces',
+        'deleted_title' => 'Usunięto',
+        'delete_success_message' => 'Klient został pomyślnie usunięty!',
+        'delete_error_message' => 'Błąd podczas usuwania klienta!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'Telefon',
         'status' => 'Status',
         'actions' => 'Akcje',
+        'register_new_vendor' => 'Zarejestruj nowego sprzedawcę',
+        'vendor_name' => 'Nazwa sprzedawcy',
+        'vendor_email' => 'E-mail sprzedawcy',
+        'phone_optional' => 'Telefon (opcjonalnie)',
+        'password' => 'Hasło',
+        'confirm_password' => 'Potwierdź hasło',
+        'status' => 'Status',
+        'active' => 'Aktywny',
+        'inactive' => 'Nieaktywny',
+        'banned' => 'Zablokowany',
+        'register_button' => 'Zarejestruj sprzedawcę',
+        'cancel_button' => 'Anuluj',
 
         'active' => 'Aktywny',
         'inactive' => 'Nieaktywny',
@@ -184,6 +404,8 @@ return [
         'title_manage' => 'Zarządzaj produktami',
 
         // Pola formularza
+        'vendor' => 'Sprzedawca',
+        'select_vendor' => 'Wybierz Sprzedawcę',
         'product_name' => 'Nazwa produktu',
         'product_type' => 'Typ produktu',
         'description' => 'Opis',

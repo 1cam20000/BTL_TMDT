@@ -66,23 +66,27 @@
                     <ul class="nav flex-column ms-3">
                         <li><a class="nav-link {{ Route::currentRouteName() == 'admin.customers.index' ? 'active' : '' }}" href="{{ route('admin.customers.index') }}">{{ __('cms.sidebar.brands.list') }}</a></li>
                     </ul>
-                </div>
-                
-            <li class="nav-item">
+                </div>                
+                    <li class="nav-item">
                 <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#vendorMenu" role="button" aria-expanded="false" aria-controls="vendorMenu">
                     <span><i class="fas fa-user-tag me-2"></i> <span>{{ __('cms.sidebar.vendors.title') }}</span></span>
                     <i class="fas fa-chevron-down"></i>
                 </a>
-                <div class="collapse {{ Route::currentRouteName() == 'admin.vendors.index' ? 'show' : '' }}" id="vendorMenu">
+                <div class="collapse {{ in_array(Route::currentRouteName(), ['admin.vendors.create', 'admin.vendors.index']) ? 'show' : '' }}" id="vendorMenu">
                     <ul class="nav flex-column ms-3">
                         <li>
+                            <a class="nav-link {{ Route::currentRouteName() == 'admin.vendors.create' ? 'active' : '' }}" href="{{ route('admin.vendors.create') }}">
+                                {{ __('cms.sidebar.vendors.add_new') }}
+                            </a>
+                        </li>
+                        <li>
                             <a class="nav-link {{ Route::currentRouteName() == 'admin.vendors.index' ? 'active' : '' }}" href="{{ route('admin.vendors.index') }}">
-                            {{ __('cms.sidebar.vendors.list') }}
+                                {{ __('cms.sidebar.vendors.list') }}
                             </a>
                         </li>
                     </ul>
                 </div>
-            </li>           
+            </li>        
             <li class="nav-item">
                 <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#productReviewMenu" role="button" aria-expanded="false" aria-controls="productReviewMenu">
                     <span><i class="fas fa-star me-2"></i> <span>{{ __('cms.sidebar.product_reviews.title') }}</span></span>
@@ -103,6 +107,45 @@
                 <ul class="nav flex-column ms-3">
                     <li><a class="nav-link {{ Route::currentRouteName() == 'admin.banners.create' ? 'active' : '' }}" href="{{ route('admin.banners.create') }}">{{ __('cms.sidebar.banners.add_new') }}</a></li>
                     <li><a class="nav-link {{ Route::currentRouteName() == 'admin.banners.index' ? 'active' : '' }}" href="{{ route('admin.banners.index') }}">{{ __('cms.sidebar.banners.list') }}</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#paymentsMenu" role="button" aria-expanded="false" aria-controls="paymentsMenu">
+                <span><i class="fas fa-credit-card me-2"></i> <span>{{ __('cms.sidebar.payments.title') }}</span></span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="collapse {{ in_array(Route::currentRouteName(), ['admin.payments.index', 'admin.payments.getData']) ? 'show' : '' }}" id="paymentsMenu">
+                <ul class="nav flex-column ms-3">
+                    <li>
+                        <a class="nav-link {{ Route::currentRouteName() == 'admin.payments.index' ? 'active' : '' }}" href="{{ route('admin.payments.index') }}">{{ __('cms.sidebar.payments.list') }}</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#refundsMenu" role="button" aria-expanded="false" aria-controls="refundsMenu">
+                <span><i class="fas fa-undo me-2"></i> <span>{{ __('cms.sidebar.refunds.title') }}</span></span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="collapse {{ in_array(Route::currentRouteName(), ['admin.refunds.index', 'admin.refunds.getData']) ? 'show' : '' }}" id="refundsMenu">
+                <ul class="nav flex-column ms-3">
+                    <li>
+                        <a class="nav-link {{ Route::currentRouteName() == 'admin.refunds.index' ? 'active' : '' }}" href="{{ route('admin.refunds.index') }}">{{ __('cms.sidebar.refunds.list') }}</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#gatewaysMenu" role="button" aria-expanded="false" aria-controls="gatewaysMenu">
+                <span><i class="fas fa-cogs me-2"></i> <span>{{ __('cms.sidebar.payment_gateways.title') }}</span></span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="collapse {{ in_array(Route::currentRouteName(), ['admin.payment-gateways.index', 'admin.payment-gateways.getData', 'admin.payment-gateways.edit']) ? 'show' : '' }}" id="gatewaysMenu">
+                <ul class="nav flex-column ms-3">
+                    <li>
+                        <a class="nav-link {{ Route::currentRouteName() == 'admin.payment-gateways.index' ? 'active' : '' }}" href="{{ route('admin.payment-gateways.index') }}">{{ __('cms.sidebar.payment_gateways.list') }}</a>
+                    </li>
                 </ul>
             </div>
         </li>
@@ -170,19 +213,19 @@
         </li>
         <li class="nav-item">
         <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#pageMenu" role="button" aria-expanded="false" aria-controls="pageMenu">
-            <span><i class="fas fa-file-alt me-2"></i> <span>Pages</span></span>
+            <span><i class="fas fa-file-alt me-2"></i> <span>{{ __('cms.sidebar.pages.title') }}</span></span>
             <i class="fas fa-chevron-down"></i>
         </a>
         <div class="collapse {{ Route::currentRouteName() == 'admin.pages.create' || Route::currentRouteName() == 'admin.pages.index' ? 'show' : '' }}" id="pageMenu">
             <ul class="nav flex-column ms-3">
                 <li>
                     <a class="nav-link {{ Route::currentRouteName() == 'admin.pages.create' ? 'active' : '' }}" href="{{ route('admin.pages.create') }}">
-                    Add New
+                    {{ __('cms.sidebar.pages.add_new') }}
                     </a>
                 </li>
                 <li>
                     <a class="nav-link {{ Route::currentRouteName() == 'admin.pages.index' ? 'active' : '' }}" href="{{ route('admin.pages.index') }}">
-                    List
+                    {{ __('cms.sidebar.pages.list') }}
                     </a>
                 </li>
             </ul>
