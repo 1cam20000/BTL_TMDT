@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'Nhà cung cấp',
+            'add_new' => 'Thêm mới',
             'list' => 'Danh sách',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'Đơn hàng đang chờ',
             'completed_orders' => 'Đơn hàng đã hoàn thành',
         ],
+        'pages' => [
+            'title' => 'Trang',
+            'add_new' => 'Thêm mới',
+            'list' => 'Danh sách',
+        ],
+        'payments' => [
+            'title' => 'Thanh toán',
+            'list' => 'Danh sách',
+        ],
+
+        'refunds' => [
+            'title' => 'Hoàn tiền',
+            'list' => 'Danh sách',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'Cổng thanh toán',
+            'list' => 'Danh sách',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'Cổng thanh toán',
+        'edit_title' => 'Chỉnh sửa cổng thanh toán',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'Tên',
+        'code' => 'Mã',
+        'status' => 'Trạng thái',
+        'action' => 'Hành động',
+
+        // Status Labels
+        'active' => 'Hoạt động',
+        'inactive' => 'Không hoạt động',
+
+        // Delete Modal
+        'delete_confirm' => 'Xác nhận xóa',
+        'delete_message' => 'Bạn có chắc chắn muốn xóa cổng thanh toán này không?',
+        'cancel' => 'Hủy',
+        'delete' => 'Xóa',
+
+        // Alerts / Notifications
+        'success' => 'Thành công',
+        'deleted' => 'Đã xóa',
+        'delete_error' => 'Lỗi khi xóa cổng thanh toán!',
+
+        // Form Labels
+        'gateway_name' => 'Tên cổng',
+        'description' => 'Mô tả',
+        'active_label' => 'Hoạt động',
+        'configurations' => 'Cấu hình cổng',
+        'key_name' => 'Tên khóa',
+        'key_value' => 'Giá trị khóa',
+        'environment' => 'Môi trường',
+        'sandbox' => 'Sandbox',
+        'production' => 'Production',
+        'encrypted' => 'Đã mã hóa',
+        'unique' => 'Độc nhất',
+        'update_button' => 'Cập nhật',
+
+        // Fallback
+        'not_available' => 'Không có sẵn',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'Hoàn tiền',
+        'details_title' => 'Chi tiết hoàn tiền',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => 'Thanh toán',
+        'amount' => 'Số tiền',
+        'status' => 'Trạng thái',
+        'reason' => 'Lý do',
+        'action' => 'Hành động',
+
+        // Status Labels
+        'completed' => 'Hoàn tất',
+        'pending' => 'Đang chờ',
+        'failed' => 'Thất bại',
+
+        // Delete Modal
+        'delete_confirm' => 'Xác nhận xóa',
+        'delete_message' => 'Bạn có chắc chắn muốn xóa khoản hoàn tiền này không?',
+        'cancel' => 'Hủy',
+        'delete' => 'Xóa',
+
+        // Alerts / Notifications
+        'success' => 'Thành công',
+        'deleted' => 'Đã xóa',
+        'delete_error' => 'Lỗi khi xóa khoản hoàn tiền!',
+
+        // Refund Details Page
+        'created_at' => 'Ngày tạo',
+        'updated_at' => 'Ngày cập nhật',
+        'back' => 'Quay lại danh sách hoàn tiền',
+
+        // Fallback
+        'not_available' => 'Không có sẵn',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'Thanh toán',
+        'details_title' => 'Chi tiết thanh toán',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => 'Đơn hàng',
+        'user' => 'Người dùng',
+        'gateway' => 'Cổng thanh toán',
+        'amount' => 'Số tiền',
+        'status' => 'Trạng thái',
+        'transaction' => 'Giao dịch',
+        'action' => 'Hành động',
+
+        // Status Labels
+        'completed' => 'Hoàn tất',
+        'pending' => 'Đang chờ',
+        'failed' => 'Thất bại',
+
+        // Delete Modal
+        'delete_confirm' => 'Xác nhận xóa',
+        'delete_message' => 'Bạn có chắc chắn muốn xóa thanh toán này không?',
+        'cancel' => 'Hủy',
+        'delete' => 'Xóa',
+
+        // Alerts / Notifications
+        'success' => 'Thành công',
+        'deleted' => 'Đã xóa',
+        'delete_error' => 'Lỗi khi xóa thanh toán!',
+
+        // Payment Details Page
+        'transaction_id' => 'ID giao dịch',
+        'created_at' => 'Ngày tạo',
+        'back' => 'Quay lại Thanh toán',
+
+        // Fallback
+        'not_available' => 'Không có sẵn',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'Trang',
+        'choose_file' => 'Chọn tệp',
+
+        // Create Page
+        'create' => 'Tạo Trang',
+        'form_title' => 'Tiêu đề (:code)',
+        'form_content' => 'Nội dung (:code)',
+        'form_image' => 'Hình ảnh (:code)',
+        'form_save' => 'Lưu',
+
+        // Edit Page
+        'edit' => 'Chỉnh sửa Trang',
+        'form_update' => 'Cập nhật',
+
+        // Pages Table
+        'table_title' => 'Tiêu đề',
+        'table_slug' => 'Slug',
+        'table_status' => 'Trạng thái',
+        'table_actions' => 'Hành động',
+
+        // Delete Modal
+        'delete_modal_title' => 'Xác nhận xóa',
+        'delete_modal_text' => 'Bạn có chắc chắn muốn xóa trang này không?',
+        'delete_modal_cancel' => 'Hủy',
+        'delete_modal_delete' => 'Xóa',
+
+        // Toastr messages
+        'toastr_success' => 'Thành công',
+        'toastr_error' => 'Lỗi khi xóa trang',
+    ],
+
+    'customers' => [
+        'customer_list' => 'Danh sách khách hàng',
+
+        // Table columns
+        'id' => 'ID',
+        'name' => 'Tên',
+        'email' => 'E-mail',
+        'phone' => 'Điện thoại',
+        'address' => 'Địa chỉ',
+        'status' => 'Trạng thái',
+        'actions' => 'Hành động',
+
+        // Status labels
+        'active' => 'Hoạt động',
+        'inactive' => 'Không hoạt động',
+
+        // Modal
+        'confirm_delete_title' => 'Xác nhận xóa',
+        'confirm_delete_message' => 'Bạn có chắc chắn muốn xóa khách hàng này không?',
+        'cancel_button' => 'Hủy',
+        'delete_button' => 'Xóa',
+
+        // Toastr messages
+        'success_title' => 'Thành công',
+        'deleted_title' => 'Đã xóa',
+        'delete_success_message' => 'Xóa khách hàng thành công!',
+        'delete_error_message' => 'Lỗi khi xóa khách hàng!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'Số điện thoại',
         'status' => 'Trạng thái',
         'actions' => 'Hành động',
+        'register_new_vendor' => 'Đăng ký nhà bán mới',
+        'vendor_name' => 'Tên nhà bán',
+        'vendor_email' => 'Email nhà bán',
+        'phone_optional' => 'Số điện thoại (tùy chọn)',
+        'password' => 'Mật khẩu',
+        'confirm_password' => 'Xác nhận mật khẩu',
+        'status' => 'Trạng thái',
+        'active' => 'Hoạt động',
+        'inactive' => 'Không hoạt động',
+        'banned' => 'Bị cấm',
+        'register_button' => 'Đăng ký nhà bán',
+        'cancel_button' => 'Hủy',
 
         'active' => 'Hoạt động',
         'inactive' => 'Không hoạt động',
@@ -212,6 +432,8 @@ return [
         'title_manage' => 'Quản Lý Sản Phẩm',
 
         // Form Fields
+        'vendor' => 'Người bán',
+        'select_vendor' => 'Chọn Người bán',
         'product_name' => 'Tên Sản Phẩm',
         'product_type' => 'Loại Sản Phẩm',
         'description' => 'Mô Tả',

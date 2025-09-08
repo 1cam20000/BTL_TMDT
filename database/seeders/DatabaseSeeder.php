@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
             SiteSettingsSeeder::class,
             OrderSeeder::class,
             LanguageSeeder::class,
+            PaymentGatewaySeeder::class,
+            PaymentGatewayConfigSeeder::class,
+            PaymentSeeder::class,
+            RefundSeeder::class,
         ]);
     }
 }

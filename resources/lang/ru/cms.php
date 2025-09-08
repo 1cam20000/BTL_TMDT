@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'Поставщики',
+            'add_new' => 'Добавить новый',
             'list' => 'Список',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'Ожидающие заказы',
             'completed_orders' => 'Завершенные заказы',
         ],
+        'pages' => [
+            'title' => 'Страницы',
+            'add_new' => 'Добавить новую',
+            'list' => 'Список',
+        ],
+        'payments' => [
+            'title' => 'Платежи',
+            'list' => 'Список',
+        ],
+
+        'refunds' => [
+            'title' => 'Возвраты',
+            'list' => 'Список',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'Платёжные шлюзы',
+            'list' => 'Список',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'Платёжные шлюзы',
+        'edit_title' => 'Редактировать платёжный шлюз',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'Название',
+        'code' => 'Код',
+        'status' => 'Статус',
+        'action' => 'Действие',
+
+        // Status Labels
+        'active' => 'Активен',
+        'inactive' => 'Неактивен',
+
+        // Delete Modal
+        'delete_confirm' => 'Подтвердить удаление',
+        'delete_message' => 'Вы уверены, что хотите удалить этот платёжный шлюз?',
+        'cancel' => 'Отмена',
+        'delete' => 'Удалить',
+
+        // Alerts / Notifications
+        'success' => 'Успех',
+        'deleted' => 'Удалено',
+        'delete_error' => 'Ошибка при удалении платёжного шлюза!',
+
+        // Form Labels
+        'gateway_name' => 'Название шлюза',
+        'description' => 'Описание',
+        'active_label' => 'Активен',
+        'configurations' => 'Настройки шлюза',
+        'key_name' => 'Имя ключа',
+        'key_value' => 'Значение ключа',
+        'environment' => 'Окружение',
+        'sandbox' => 'Песочница',
+        'production' => 'Продакшн',
+        'encrypted' => 'Зашифровано',
+        'unique' => 'Уникальный',
+        'update_button' => 'Обновить',
+
+        // Fallback
+        'not_available' => 'Н/Д',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'Возвраты',
+        'details_title' => 'Детали возврата',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => 'Платёж',
+        'amount' => 'Сумма',
+        'status' => 'Статус',
+        'reason' => 'Причина',
+        'action' => 'Действие',
+
+        // Status Labels
+        'completed' => 'Завершено',
+        'pending' => 'В ожидании',
+        'failed' => 'Неудачно',
+
+        // Delete Modal
+        'delete_confirm' => 'Подтвердить удаление',
+        'delete_message' => 'Вы уверены, что хотите удалить этот возврат?',
+        'cancel' => 'Отмена',
+        'delete' => 'Удалить',
+
+        // Alerts / Notifications
+        'success' => 'Успех',
+        'deleted' => 'Удалено',
+        'delete_error' => 'Ошибка при удалении возврата!',
+
+        // Refund Details Page
+        'created_at' => 'Создано',
+        'updated_at' => 'Обновлено',
+        'back' => 'Назад к возвратам',
+
+        // Fallback
+        'not_available' => 'Недоступно',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'Платежи',
+        'details_title' => 'Детали платежа',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => 'Заказ',
+        'user' => 'Пользователь',
+        'gateway' => 'Платежный шлюз',
+        'amount' => 'Сумма',
+        'status' => 'Статус',
+        'transaction' => 'Транзакция',
+        'action' => 'Действие',
+
+        // Status Labels
+        'completed' => 'Завершено',
+        'pending' => 'В ожидании',
+        'failed' => 'Неудачно',
+
+        // Delete Modal
+        'delete_confirm' => 'Подтвердить удаление',
+        'delete_message' => 'Вы уверены, что хотите удалить этот платеж?',
+        'cancel' => 'Отмена',
+        'delete' => 'Удалить',
+
+        // Alerts / Notifications
+        'success' => 'Успешно',
+        'deleted' => 'Удалено',
+        'delete_error' => 'Ошибка при удалении платежа!',
+
+        // Payment Details Page
+        'transaction_id' => 'ID транзакции',
+        'created_at' => 'Дата создания',
+        'back' => 'Вернуться к платежам',
+
+        // Fallback
+        'not_available' => 'Недоступно',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'Страницы',
+        'choose_file' => 'Выбрать файл',
+
+        // Create Page
+        'create' => 'Создать страницу',
+        'form_title' => 'Заголовок (:code)',
+        'form_content' => 'Содержание (:code)',
+        'form_image' => 'Изображение (:code)',
+        'form_save' => 'Сохранить',
+
+        // Edit Page
+        'edit' => 'Редактировать страницу',
+        'form_update' => 'Обновить',
+
+        // Pages Table
+        'table_title' => 'Заголовок',
+        'table_slug' => 'Slug',
+        'table_status' => 'Статус',
+        'table_actions' => 'Действия',
+
+        // Delete Modal
+        'delete_modal_title' => 'Подтверждение удаления',
+        'delete_modal_text' => 'Вы уверены, что хотите удалить эту страницу?',
+        'delete_modal_cancel' => 'Отмена',
+        'delete_modal_delete' => 'Удалить',
+
+        // Toastr messages
+        'toastr_success' => 'Успех',
+        'toastr_error' => 'Ошибка при удалении страницы',
+    ],
+
+    'customers' => [
+        'customer_list' => 'Список клиентов',
+
+        // Table columns
+        'id' => 'ID',
+        'name' => 'Имя',
+        'email' => 'E-mail',
+        'phone' => 'Телефон',
+        'address' => 'Адрес',
+        'status' => 'Статус',
+        'actions' => 'Действия',
+
+        // Status labels
+        'active' => 'Активен',
+        'inactive' => 'Неактивен',
+
+        // Modal
+        'confirm_delete_title' => 'Подтвердите удаление',
+        'confirm_delete_message' => 'Вы уверены, что хотите удалить этого клиента?',
+        'cancel_button' => 'Отмена',
+        'delete_button' => 'Удалить',
+
+        // Toastr messages
+        'success_title' => 'Успешно',
+        'deleted_title' => 'Удалено',
+        'delete_success_message' => 'Клиент успешно удалён!',
+        'delete_error_message' => 'Ошибка при удалении клиента!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'Телефон',
         'status' => 'Статус',
         'actions' => 'Действия',
+        'register_new_vendor' => 'Зарегистрировать нового продавца',
+        'vendor_name' => 'Имя продавца',
+        'vendor_email' => 'Электронная почта продавца',
+        'phone_optional' => 'Телефон (необязательно)',
+        'password' => 'Пароль',
+        'confirm_password' => 'Подтвердите пароль',
+        'status' => 'Статус',
+        'active' => 'Активный',
+        'inactive' => 'Неактивный',
+        'banned' => 'Заблокирован',
+        'register_button' => 'Зарегистрировать продавца',
+        'cancel_button' => 'Отмена',
 
         'active' => 'Активен',
         'inactive' => 'Неактивен',
@@ -184,6 +404,8 @@ return [
         'title_manage' => 'Управление товарами',
 
         // Поля формы
+        'vendor' => 'Поставщик',
+        'select_vendor' => 'Выберите поставщика',
         'product_name' => 'Название товара',
         'product_type' => 'Тип товара',
         'description' => 'Описание',

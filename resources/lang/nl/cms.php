@@ -45,6 +45,7 @@ return [
         ],
         'vendors' => [
             'title' => 'Verkopers',
+            'add_new' => 'Nieuwe Toevoegen',
             'list' => 'Lijst',
         ],
         'product_reviews' => [
@@ -81,6 +82,213 @@ return [
             'pending_orders' => 'In Behandeling',
             'completed_orders' => 'Voltooide Bestellingen',
         ],
+        'pages' => [
+            'title' => 'Pagina\'s',
+            'add_new' => 'Nieuw toevoegen',
+            'list' => 'Lijst',
+        ],
+        'payments' => [
+            'title' => 'Betalingen',
+            'list' => 'Lijst',
+        ],
+
+        'refunds' => [
+            'title' => 'Terugbetalingen',
+            'list' => 'Lijst',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'Betaalgateways',
+            'list' => 'Lijst',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'Betaalgateways',
+        'edit_title' => 'Betaalgateway bewerken',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'Naam',
+        'code' => 'Code',
+        'status' => 'Status',
+        'action' => 'Actie',
+
+        // Status Labels
+        'active' => 'Actief',
+        'inactive' => 'Inactief',
+
+        // Delete Modal
+        'delete_confirm' => 'Bevestig verwijderen',
+        'delete_message' => 'Weet u zeker dat u deze betaalgateway wilt verwijderen?',
+        'cancel' => 'Annuleren',
+        'delete' => 'Verwijderen',
+
+        // Alerts / Notifications
+        'success' => 'Succes',
+        'deleted' => 'Verwijderd',
+        'delete_error' => 'Fout bij het verwijderen van de betaalgateway!',
+
+        // Form Labels
+        'gateway_name' => 'Gateway Naam',
+        'description' => 'Beschrijving',
+        'active_label' => 'Actief',
+        'configurations' => 'Gateway Configuraties',
+        'key_name' => 'Sleutel Naam',
+        'key_value' => 'Sleutel Waarde',
+        'environment' => 'Omgeving',
+        'sandbox' => 'Sandbox',
+        'production' => 'Productie',
+        'encrypted' => 'Versleuteld',
+        'unique' => 'Uniek',
+        'update_button' => 'Bijwerken',
+
+        // Fallback
+        'not_available' => 'Niet beschikbaar',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'Terugbetalingen',
+        'details_title' => 'Terugbetalingsdetails',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => 'Betaling',
+        'amount' => 'Bedrag',
+        'status' => 'Status',
+        'reason' => 'Reden',
+        'action' => 'Actie',
+
+        // Status Labels
+        'completed' => 'Voltooid',
+        'pending' => 'In afwachting',
+        'failed' => 'Mislukt',
+
+        // Delete Modal
+        'delete_confirm' => 'Bevestig verwijderen',
+        'delete_message' => 'Weet u zeker dat u deze terugbetaling wilt verwijderen?',
+        'cancel' => 'Annuleren',
+        'delete' => 'Verwijderen',
+
+        // Alerts / Notifications
+        'success' => 'Succes',
+        'deleted' => 'Verwijderd',
+        'delete_error' => 'Fout bij het verwijderen van de terugbetaling!',
+
+        // Refund Details Page
+        'created_at' => 'Gemaakt op',
+        'updated_at' => 'Bijgewerkt op',
+        'back' => 'Terug naar terugbetalingen',
+
+        // Fallback
+        'not_available' => 'Niet beschikbaar',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'Betalingen',
+        'details_title' => 'Betalingsgegevens',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => 'Bestelling',
+        'user' => 'Gebruiker',
+        'gateway' => 'Betaalgateway',
+        'amount' => 'Bedrag',
+        'status' => 'Status',
+        'transaction' => 'Transactie',
+        'action' => 'Actie',
+
+        // Status Labels
+        'completed' => 'Voltooid',
+        'pending' => 'In afwachting',
+        'failed' => 'Mislukt',
+
+        // Delete Modal
+        'delete_confirm' => 'Verwijderen bevestigen',
+        'delete_message' => 'Weet u zeker dat u deze betaling wilt verwijderen?',
+        'cancel' => 'Annuleren',
+        'delete' => 'Verwijderen',
+
+        // Alerts / Notifications
+        'success' => 'Succes',
+        'deleted' => 'Verwijderd',
+        'delete_error' => 'Fout bij het verwijderen van betaling!',
+
+        // Payment Details Page
+        'transaction_id' => 'Transactie-ID',
+        'created_at' => 'Aangemaakt op',
+        'back' => 'Terug naar Betalingen',
+
+        // Fallback
+        'not_available' => 'Niet beschikbaar',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'Pagina\'s',
+        'choose_file' => 'Bestand kiezen',
+
+        // Create Page
+        'create' => 'Pagina maken',
+        'form_title' => 'Titel (:code)',
+        'form_content' => 'Inhoud (:code)',
+        'form_image' => 'Afbeelding (:code)',
+        'form_save' => 'Opslaan',
+
+        // Edit Page
+        'edit' => 'Pagina bewerken',
+        'form_update' => 'Bijwerken',
+
+        // Pages Table
+        'table_title' => 'Titel',
+        'table_slug' => 'Slug',
+        'table_status' => 'Status',
+        'table_actions' => 'Acties',
+
+        // Delete Modal
+        'delete_modal_title' => 'Verwijderen bevestigen',
+        'delete_modal_text' => 'Weet je zeker dat je deze pagina wilt verwijderen?',
+        'delete_modal_cancel' => 'Annuleren',
+        'delete_modal_delete' => 'Verwijderen',
+
+        // Toastr messages
+        'toastr_success' => 'Succes',
+        'toastr_error' => 'Fout bij het verwijderen van de pagina',
+    ],
+
+    'customers' => [
+        'customer_list' => 'Klantlijst',
+
+        // Table columns
+        'id' => 'ID',
+        'name' => 'Naam',
+        'email' => 'E-mail',
+        'phone' => 'Telefoon',
+        'address' => 'Adres',
+        'status' => 'Status',
+        'actions' => 'Acties',
+
+        // Status labels
+        'active' => 'Actief',
+        'inactive' => 'Inactief',
+
+        // Modal
+        'confirm_delete_title' => 'Verwijderen bevestigen',
+        'confirm_delete_message' => 'Weet u zeker dat u deze klant wilt verwijderen?',
+        'cancel_button' => 'Annuleren',
+        'delete_button' => 'Verwijderen',
+
+        // Toastr messages
+        'success_title' => 'Succes',
+        'deleted_title' => 'Verwijderd',
+        'delete_success_message' => 'Klant succesvol verwijderd!',
+        'delete_error_message' => 'Fout bij het verwijderen van klant!',
     ],
 
     'vendors' => [
@@ -91,6 +299,18 @@ return [
         'phone' => 'Telefoon',
         'status' => 'Status',
         'actions' => 'Acties',
+        'register_new_vendor' => 'Nieuwe verkoper registreren',
+        'vendor_name' => 'Naam van de verkoper',
+        'vendor_email' => 'E-mailadres van de verkoper',
+        'phone_optional' => 'Telefoon (optioneel)',
+        'password' => 'Wachtwoord',
+        'confirm_password' => 'Wachtwoord bevestigen',
+        'status' => 'Status',
+        'active' => 'Actief',
+        'inactive' => 'Inactief',
+        'banned' => 'Geblokkeerd',
+        'register_button' => 'Verkoper registreren',
+        'cancel_button' => 'Annuleren',
 
         'active' => 'Actief',
         'inactive' => 'Inactief',
@@ -183,6 +403,8 @@ return [
         'title_manage' => 'Producten beheren',
 
         // Formuliervelden
+        'vendor' => 'Verkoper',
+        'select_vendor' => 'Selecteer Verkoper',
         'product_name' => 'Productnaam',
         'product_type' => 'Producttype',
         'description' => 'Beschrijving',

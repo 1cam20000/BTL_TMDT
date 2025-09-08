@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'Satıcılar',
+            'add_new' => 'Yeni Ekle',
             'list' => 'Liste',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'Bekleyen Siparişler',
             'completed_orders' => 'Tamamlanan Siparişler',
         ],
+        'pages' => [
+            'title' => 'Sayfalar',
+            'add_new' => 'Yeni Ekle',
+            'list' => 'Liste',
+        ],
+        'payments' => [
+            'title' => 'Ödemeler',
+            'list' => 'Liste',
+        ],
+
+        'refunds' => [
+            'title' => 'İadeler',
+            'list' => 'Liste',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'Ödeme Ağ Geçitleri',
+            'list' => 'Liste',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'Ödeme Ağ Geçitleri',
+        'edit_title' => 'Ödeme Ağ Geçidini Düzenle',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'Ad',
+        'code' => 'Kod',
+        'status' => 'Durum',
+        'action' => 'İşlem',
+
+        // Status Labels
+        'active' => 'Aktif',
+        'inactive' => 'Pasif',
+
+        // Delete Modal
+        'delete_confirm' => 'Silme Onayı',
+        'delete_message' => 'Bu ödeme ağ geçidini silmek istediğinizden emin misiniz?',
+        'cancel' => 'İptal',
+        'delete' => 'Sil',
+
+        // Alerts / Notifications
+        'success' => 'Başarılı',
+        'deleted' => 'Silindi',
+        'delete_error' => 'Ödeme ağ geçidi silinirken hata oluştu!',
+
+        // Form Labels
+        'gateway_name' => 'Ağ Geçidi Adı',
+        'description' => 'Açıklama',
+        'active_label' => 'Aktif',
+        'configurations' => 'Ağ Geçidi Yapılandırmaları',
+        'key_name' => 'Anahtar Adı',
+        'key_value' => 'Anahtar Değeri',
+        'environment' => 'Ortam',
+        'sandbox' => 'Sandbox',
+        'production' => 'Production',
+        'encrypted' => 'Şifreli',
+        'unique' => 'Benzersiz',
+        'update_button' => 'Güncelle',
+
+        // Fallback
+        'not_available' => 'Mevcut değil',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'İadeler',
+        'details_title' => 'İade Detayları',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => 'Ödeme',
+        'amount' => 'Tutar',
+        'status' => 'Durum',
+        'reason' => 'Sebep',
+        'action' => 'İşlem',
+
+        // Status Labels
+        'completed' => 'Tamamlandı',
+        'pending' => 'Beklemede',
+        'failed' => 'Başarısız',
+
+        // Delete Modal
+        'delete_confirm' => 'Silme Onayı',
+        'delete_message' => 'Bu iadeyi silmek istediğinizden emin misiniz?',
+        'cancel' => 'İptal',
+        'delete' => 'Sil',
+
+        // Alerts / Notifications
+        'success' => 'Başarılı',
+        'deleted' => 'Silindi',
+        'delete_error' => 'İade silinirken hata oluştu!',
+
+        // Refund Details Page
+        'created_at' => 'Oluşturulma Tarihi',
+        'updated_at' => 'Güncellenme Tarihi',
+        'back' => 'İadelere Geri Dön',
+
+        // Fallback
+        'not_available' => 'Mevcut değil',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'Ödemeler',
+        'details_title' => 'Ödeme Detayları',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => 'Sipariş',
+        'user' => 'Kullanıcı',
+        'gateway' => 'Ödeme Geçidi',
+        'amount' => 'Tutar',
+        'status' => 'Durum',
+        'transaction' => 'İşlem',
+        'action' => 'İşlem',
+
+        // Status Labels
+        'completed' => 'Tamamlandı',
+        'pending' => 'Beklemede',
+        'failed' => 'Başarısız',
+
+        // Delete Modal
+        'delete_confirm' => 'Silme Onayı',
+        'delete_message' => 'Bu ödemeyi silmek istediğinizden emin misiniz?',
+        'cancel' => 'İptal',
+        'delete' => 'Sil',
+
+        // Alerts / Notifications
+        'success' => 'Başarılı',
+        'deleted' => 'Silindi',
+        'delete_error' => 'Ödeme silinirken hata oluştu!',
+
+        // Payment Details Page
+        'transaction_id' => 'İşlem ID',
+        'created_at' => 'Oluşturulma Tarihi',
+        'back' => 'Ödeme Listesine Dön',
+
+        // Fallback
+        'not_available' => 'Mevcut değil',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'Sayfalar',
+        'choose_file' => 'Dosya Seç',
+
+        // Create Page
+        'create' => 'Sayfa Oluştur',
+        'form_title' => 'Başlık (:code)',
+        'form_content' => 'İçerik (:code)',
+        'form_image' => 'Resim (:code)',
+        'form_save' => 'Kaydet',
+
+        // Edit Page
+        'edit' => 'Sayfayı Düzenle',
+        'form_update' => 'Güncelle',
+
+        // Pages Table
+        'table_title' => 'Başlık',
+        'table_slug' => 'Slug',
+        'table_status' => 'Durum',
+        'table_actions' => 'İşlemler',
+
+        // Delete Modal
+        'delete_modal_title' => 'Silme Onayı',
+        'delete_modal_text' => 'Bu sayfayı silmek istediğinizden emin misiniz?',
+        'delete_modal_cancel' => 'İptal',
+        'delete_modal_delete' => 'Sil',
+
+        // Toastr messages
+        'toastr_success' => 'Başarılı',
+        'toastr_error' => 'Sayfa silinirken hata oluştu',
+    ],
+
+    'customers' => [
+        'customer_list' => 'Müşteri Listesi',
+
+        // Table columns
+        'id' => 'ID',
+        'name' => 'Adı',
+        'email' => 'E-posta',
+        'phone' => 'Telefon',
+        'address' => 'Adres',
+        'status' => 'Durum',
+        'actions' => 'İşlemler',
+
+        // Status labels
+        'active' => 'Aktif',
+        'inactive' => 'Pasif',
+
+        // Modal
+        'confirm_delete_title' => 'Silme Onayı',
+        'confirm_delete_message' => 'Bu müşteriyi silmek istediğinizden emin misiniz?',
+        'cancel_button' => 'İptal',
+        'delete_button' => 'Sil',
+
+        // Toastr messages
+        'success_title' => 'Başarılı',
+        'deleted_title' => 'Silindi',
+        'delete_success_message' => 'Müşteri başarıyla silindi!',
+        'delete_error_message' => 'Müşteri silinirken hata oluştu!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'Telefon',
         'status' => 'Durum',
         'actions' => 'İşlemler',
+        'register_new_vendor' => 'Yeni Satıcı Kaydet',
+        'vendor_name' => 'Satıcı Adı',
+        'vendor_email' => 'Satıcı E-postası',
+        'phone_optional' => 'Telefon (Opsiyonel)',
+        'password' => 'Şifre',
+        'confirm_password' => 'Şifreyi Onayla',
+        'status' => 'Durum',
+        'active' => 'Aktif',
+        'inactive' => 'Pasif',
+        'banned' => 'Yasaklı',
+        'register_button' => 'Satıcıyı Kaydet',
+        'cancel_button' => 'İptal',
 
         'active' => 'Aktif',
         'inactive' => 'Pasif',
@@ -184,6 +404,8 @@ return [
         'title_manage' => 'Ürünleri Yönet',
 
         // Form Fields
+        'vendor' => 'Satıcı',
+        'select_vendor' => 'Satıcı Seç',
         'product_name' => 'Ürün Adı',
         'product_type' => 'Ürün Tipi',
         'description' => 'Açıklama',

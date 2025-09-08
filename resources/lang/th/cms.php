@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'ผู้ขาย',
+            'add_new' => 'เพิ่มใหม่',
             'list' => 'รายการ',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => 'คำสั่งซื้อที่รอดำเนินการ',
             'completed_orders' => 'คำสั่งซื้อที่เสร็จสมบูรณ์',
         ],
+        'pages' => [
+            'title' => 'หน้า',
+            'add_new' => 'เพิ่มใหม่',
+            'list' => 'รายการ',
+        ],
+        'payments' => [
+            'title' => 'การชำระเงิน',
+            'list' => 'รายการ',
+        ],
+
+        'refunds' => [
+            'title' => 'การคืนเงิน',
+            'list' => 'รายการ',
+        ],
+
+        'payment_gateways' => [
+            'title' => 'ช่องทางการชำระเงิน',
+            'list' => 'รายการ',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => 'เกตเวย์การชำระเงิน',
+        'edit_title' => 'แก้ไขเกตเวย์การชำระเงิน',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => 'ชื่อ',
+        'code' => 'รหัส',
+        'status' => 'สถานะ',
+        'action' => 'การกระทำ',
+
+        // Status Labels
+        'active' => 'ใช้งาน',
+        'inactive' => 'ไม่ใช้งาน',
+
+        // Delete Modal
+        'delete_confirm' => 'ยืนยันการลบ',
+        'delete_message' => 'คุณแน่ใจหรือไม่ว่าต้องการลบเกตเวย์การชำระเงินนี้?',
+        'cancel' => 'ยกเลิก',
+        'delete' => 'ลบ',
+
+        // Alerts / Notifications
+        'success' => 'สำเร็จ',
+        'deleted' => 'ลบแล้ว',
+        'delete_error' => 'เกิดข้อผิดพลาดในการลบเกตเวย์การชำระเงิน!',
+
+        // Form Labels
+        'gateway_name' => 'ชื่อเกตเวย์',
+        'description' => 'คำอธิบาย',
+        'active_label' => 'ใช้งาน',
+        'configurations' => 'การตั้งค่าเกตเวย์',
+        'key_name' => 'ชื่อคีย์',
+        'key_value' => 'ค่าคีย์',
+        'environment' => 'สภาพแวดล้อม',
+        'sandbox' => 'Sandbox',
+        'production' => 'Production',
+        'encrypted' => 'เข้ารหัส',
+        'unique' => 'ไม่ซ้ำ',
+        'update_button' => 'อัปเดต',
+
+        // Fallback
+        'not_available' => 'ไม่พร้อมใช้งาน',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => 'การคืนเงิน',
+        'details_title' => 'รายละเอียดการคืนเงิน',
+
+        // Table Headings
+        'id' => 'รหัส',
+        'payment' => 'การชำระเงิน',
+        'amount' => 'จำนวนเงิน',
+        'status' => 'สถานะ',
+        'reason' => 'เหตุผล',
+        'action' => 'การกระทำ',
+
+        // Status Labels
+        'completed' => 'เสร็จสิ้น',
+        'pending' => 'รอดำเนินการ',
+        'failed' => 'ล้มเหลว',
+
+        // Delete Modal
+        'delete_confirm' => 'ยืนยันการลบ',
+        'delete_message' => 'คุณแน่ใจหรือไม่ว่าต้องการลบการคืนเงินนี้?',
+        'cancel' => 'ยกเลิก',
+        'delete' => 'ลบ',
+
+        // Alerts / Notifications
+        'success' => 'สำเร็จ',
+        'deleted' => 'ถูกลบ',
+        'delete_error' => 'เกิดข้อผิดพลาดในการลบการคืนเงิน!',
+
+        // Refund Details Page
+        'created_at' => 'สร้างเมื่อ',
+        'updated_at' => 'อัปเดตเมื่อ',
+        'back' => 'กลับไปที่การคืนเงิน',
+
+        // Fallback
+        'not_available' => 'ไม่พร้อมใช้งาน',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => 'การชำระเงิน',
+        'details_title' => 'รายละเอียดการชำระเงิน',
+
+        // Table Headings
+        'id' => 'รหัส',
+        'order' => 'คำสั่งซื้อ',
+        'user' => 'ผู้ใช้',
+        'gateway' => 'ช่องทางการชำระเงิน',
+        'amount' => 'จำนวนเงิน',
+        'status' => 'สถานะ',
+        'transaction' => 'ธุรกรรม',
+        'action' => 'การดำเนินการ',
+
+        // Status Labels
+        'completed' => 'เสร็จสมบูรณ์',
+        'pending' => 'รอดำเนินการ',
+        'failed' => 'ล้มเหลว',
+
+        // Delete Modal
+        'delete_confirm' => 'ยืนยันการลบ',
+        'delete_message' => 'คุณแน่ใจหรือไม่ว่าต้องการลบการชำระเงินนี้?',
+        'cancel' => 'ยกเลิก',
+        'delete' => 'ลบ',
+
+        // Alerts / Notifications
+        'success' => 'สำเร็จ',
+        'deleted' => 'ถูกลบ',
+        'delete_error' => 'เกิดข้อผิดพลาดในการลบการชำระเงิน!',
+
+        // Payment Details Page
+        'transaction_id' => 'รหัสธุรกรรม',
+        'created_at' => 'วันที่สร้าง',
+        'back' => 'กลับไปยังการชำระเงิน',
+
+        // Fallback
+        'not_available' => 'ไม่พร้อมใช้งาน',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'หน้าต่างๆ',
+        'choose_file' => 'เลือกไฟล์',
+
+        // Create Page
+        'create' => 'สร้างหน้า',
+        'form_title' => 'หัวข้อ (:code)',
+        'form_content' => 'เนื้อหา (:code)',
+        'form_image' => 'รูปภาพ (:code)',
+        'form_save' => 'บันทึก',
+
+        // Edit Page
+        'edit' => 'แก้ไขหน้า',
+        'form_update' => 'อัปเดต',
+
+        // Pages Table
+        'table_title' => 'หัวข้อ',
+        'table_slug' => 'Slug',
+        'table_status' => 'สถานะ',
+        'table_actions' => 'การดำเนินการ',
+
+        // Delete Modal
+        'delete_modal_title' => 'ยืนยันการลบ',
+        'delete_modal_text' => 'คุณแน่ใจหรือไม่ว่าต้องการลบหน้านี้?',
+        'delete_modal_cancel' => 'ยกเลิก',
+        'delete_modal_delete' => 'ลบ',
+
+        // Toastr messages
+        'toastr_success' => 'สำเร็จ',
+        'toastr_error' => 'เกิดข้อผิดพลาดในการลบหน้า',
+    ],
+
+    'customers' => [
+        'customer_list' => 'รายชื่อลูกค้า',
+
+        // Table columns
+        'id' => 'รหัส',
+        'name' => 'ชื่อ',
+        'email' => 'อีเมล',
+        'phone' => 'โทรศัพท์',
+        'address' => 'ที่อยู่',
+        'status' => 'สถานะ',
+        'actions' => 'การดำเนินการ',
+
+        // Status labels
+        'active' => 'เปิดใช้งาน',
+        'inactive' => 'ปิดใช้งาน',
+
+        // Modal
+        'confirm_delete_title' => 'ยืนยันการลบ',
+        'confirm_delete_message' => 'คุณแน่ใจหรือไม่ว่าต้องการลูลูกค้ารายนี้?',
+        'cancel_button' => 'ยกเลิก',
+        'delete_button' => 'ลบ',
+
+        // Toastr messages
+        'success_title' => 'สำเร็จ',
+        'deleted_title' => 'ถูกลบแล้ว',
+        'delete_success_message' => 'ลบลูกค้าสำเร็จ!',
+        'delete_error_message' => 'เกิดข้อผิดพลาดในการลบลูกค้า!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => 'โทรศัพท์',
         'status' => 'สถานะ',
         'actions' => 'การดำเนินการ',
+        'register_new_vendor' => 'ลงทะเบียนผู้ขายใหม่',
+        'vendor_name' => 'ชื่อผู้ขาย',
+        'vendor_email' => 'อีเมลผู้ขาย',
+        'phone_optional' => 'โทรศัพท์ (ไม่บังคับ)',
+        'password' => 'รหัสผ่าน',
+        'confirm_password' => 'ยืนยันรหัสผ่าน',
+        'status' => 'สถานะ',
+        'active' => 'ใช้งาน',
+        'inactive' => 'ไม่ใช้งาน',
+        'banned' => 'ถูกแบน',
+        'register_button' => 'ลงทะเบียนผู้ขาย',
+        'cancel_button' => 'ยกเลิก',
 
         'active' => 'ใช้งาน',
         'inactive' => 'ไม่ใช้งาน',
@@ -184,6 +404,8 @@ return [
         'title_manage' => 'จัดการสินค้า',
 
         // Form Fields
+        'vendor' => 'ผู้ขาย',
+        'select_vendor' => 'เลือกผู้ขาย',
         'product_name' => 'ชื่อสินค้า',
         'product_type' => 'ประเภทสินค้า',
         'description' => 'รายละเอียด',

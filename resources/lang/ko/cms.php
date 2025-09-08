@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => '판매자',
+            'add_new' => '새로 추가',
             'list' => '목록',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => '보류 중인 주문',
             'completed_orders' => '완료된 주문',
         ],
+        'pages' => [
+            'title' => '페이지',
+            'add_new' => '새로 추가',
+            'list' => '목록',
+        ],
+        'payments' => [
+            'title' => '결제',
+            'list' => '목록',
+        ],
+
+        'refunds' => [
+            'title' => '환불',
+            'list' => '목록',
+        ],
+
+        'payment_gateways' => [
+            'title' => '결제 게이트웨이',
+            'list' => '목록',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => '결제 게이트웨이',
+        'edit_title' => '결제 게이트웨이 편집',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => '이름',
+        'code' => '코드',
+        'status' => '상태',
+        'action' => '작업',
+
+        // Status Labels
+        'active' => '활성',
+        'inactive' => '비활성',
+
+        // Delete Modal
+        'delete_confirm' => '삭제 확인',
+        'delete_message' => '이 결제 게이트웨이를 삭제하시겠습니까?',
+        'cancel' => '취소',
+        'delete' => '삭제',
+
+        // Alerts / Notifications
+        'success' => '성공',
+        'deleted' => '삭제됨',
+        'delete_error' => '결제 게이트웨이 삭제 중 오류 발생!',
+
+        // Form Labels
+        'gateway_name' => '게이트웨이 이름',
+        'description' => '설명',
+        'active_label' => '활성',
+        'configurations' => '게이트웨이 구성',
+        'key_name' => '키 이름',
+        'key_value' => '키 값',
+        'environment' => '환경',
+        'sandbox' => '샌드박스',
+        'production' => '운영',
+        'encrypted' => '암호화됨',
+        'unique' => '고유',
+        'update_button' => '업데이트',
+
+        // Fallback
+        'not_available' => '사용 불가',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => '환불',
+        'details_title' => '환불 상세 정보',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => '결제',
+        'amount' => '금액',
+        'status' => '상태',
+        'reason' => '사유',
+        'action' => '작업',
+
+        // Status Labels
+        'completed' => '완료',
+        'pending' => '대기 중',
+        'failed' => '실패',
+
+        // Delete Modal
+        'delete_confirm' => '삭제 확인',
+        'delete_message' => '이 환불을 삭제하시겠습니까?',
+        'cancel' => '취소',
+        'delete' => '삭제',
+
+        // Alerts / Notifications
+        'success' => '성공',
+        'deleted' => '삭제됨',
+        'delete_error' => '환불 삭제 중 오류 발생!',
+
+        // Refund Details Page
+        'created_at' => '생성일',
+        'updated_at' => '업데이트일',
+        'back' => '환불 목록으로 돌아가기',
+
+        // Fallback
+        'not_available' => '사용 불가',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => '결제',
+        'details_title' => '결제 상세',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => '주문',
+        'user' => '사용자',
+        'gateway' => '결제 게이트웨이',
+        'amount' => '금액',
+        'status' => '상태',
+        'transaction' => '거래',
+        'action' => '작업',
+
+        // Status Labels
+        'completed' => '완료',
+        'pending' => '대기 중',
+        'failed' => '실패',
+
+        // Delete Modal
+        'delete_confirm' => '삭제 확인',
+        'delete_message' => '이 결제를 삭제하시겠습니까?',
+        'cancel' => '취소',
+        'delete' => '삭제',
+
+        // Alerts / Notifications
+        'success' => '성공',
+        'deleted' => '삭제됨',
+        'delete_error' => '결제 삭제 중 오류 발생!',
+
+        // Payment Details Page
+        'transaction_id' => '거래 ID',
+        'created_at' => '생성일',
+        'back' => '결제 목록으로 돌아가기',
+
+        // Fallback
+        'not_available' => '사용 불가',
+    ],
+
+    'pages' => [
+        // General
+        'title' => '페이지',
+        'choose_file' => '파일 선택',
+
+        // Create Page
+        'create' => '페이지 생성',
+        'form_title' => '제목 (:code)',
+        'form_content' => '내용 (:code)',
+        'form_image' => '이미지 (:code)',
+        'form_save' => '저장',
+
+        // Edit Page
+        'edit' => '페이지 편집',
+        'form_update' => '업데이트',
+
+        // Pages Table
+        'table_title' => '제목',
+        'table_slug' => '슬러그',
+        'table_status' => '상태',
+        'table_actions' => '작업',
+
+        // Delete Modal
+        'delete_modal_title' => '삭제 확인',
+        'delete_modal_text' => '이 페이지를 삭제하시겠습니까?',
+        'delete_modal_cancel' => '취소',
+        'delete_modal_delete' => '삭제',
+
+        // Toastr messages
+        'toastr_success' => '성공',
+        'toastr_error' => '페이지 삭제 중 오류 발생',
+    ],
+
+    'customers' => [
+        'customer_list' => '고객 목록',
+
+        // Table columns
+        'id' => '아이디',
+        'name' => '이름',
+        'email' => '이메일',
+        'phone' => '전화번호',
+        'address' => '주소',
+        'status' => '상태',
+        'actions' => '작업',
+
+        // Status labels
+        'active' => '활성',
+        'inactive' => '비활성',
+
+        // Modal
+        'confirm_delete_title' => '삭제 확인',
+        'confirm_delete_message' => '이 고객을 삭제하시겠습니까?',
+        'cancel_button' => '취소',
+        'delete_button' => '삭제',
+
+        // Toastr messages
+        'success_title' => '성공',
+        'deleted_title' => '삭제됨',
+        'delete_success_message' => '고객이 성공적으로 삭제되었습니다!',
+        'delete_error_message' => '고객 삭제 중 오류가 발생했습니다!',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => '전화번호',
         'status' => '상태',
         'actions' => '작업',
+        'register_new_vendor' => '새 판매자 등록',
+        'vendor_name' => '판매자 이름',
+        'vendor_email' => '판매자 이메일',
+        'phone_optional' => '전화번호 (선택 사항)',
+        'password' => '비밀번호',
+        'confirm_password' => '비밀번호 확인',
+        'status' => '상태',
+        'active' => '활성',
+        'inactive' => '비활성',
+        'banned' => '차단됨',
+        'register_button' => '판매자 등록',
+        'cancel_button' => '취소',
 
         'active' => '활성',
         'inactive' => '비활성',
@@ -184,6 +404,8 @@ return [
         'title_manage' => '상품 관리',
 
         // 폼 필드
+        'vendor' => '판매자',
+        'select_vendor' => '판매자 선택',
         'product_name' => '상품명',
         'product_type' => '상품 유형',
         'description' => '설명',

@@ -7,7 +7,7 @@
 <section class="breadcrumb-section">
     <div class="container">
         <div class="breadcrumbs" aria-label="breadcrumb">
-            <a href="{{ url('/') }}">Home</a>
+            <a href="{{ url('/') }}">{{ __('store.product_detail.home') }}</a>
             <i class="fa fa-angle-right"></i>
             @foreach($breadcrumbs as $category)
                 <a href="{{ url('category/' . $category->slug) }}">
@@ -51,7 +51,7 @@
                             <i class="fa-regular fa-star text-muted"></i>
                         @endif
                     @endfor
-                    <span class="spanstar"> ({{ $product->reviews_count }} customer reviews)</span>
+                    <span class="spanstar"> ({{ $product->reviews_count }}{{ __('store.product_detail.customer_reviews') }})</span>
                 </div>
                 <h1 class="sec-heading">{{ $product->translation->name }}</h1>
                 <h2><span id="currency-symbol">{{ $currency->symbol }}</span><span  id="variant-price" >{{ $product->primaryVariant->converted_price ?? 'N/A' }}</span></h2>

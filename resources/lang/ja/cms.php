@@ -46,6 +46,7 @@ return [
         ],
         'vendors' => [
             'title' => 'ベンダー',
+            'add_new' => '新規追加',
             'list' => 'リスト',
         ],
         'product_reviews' => [
@@ -82,6 +83,213 @@ return [
             'pending_orders' => '保留中の注文',
             'completed_orders' => '完了した注文',
         ],
+        'pages' => [
+            'title' => 'ページ',
+            'add_new' => '新規追加',
+            'list' => '一覧',
+        ],
+        'payments' => [
+            'title' => '支払い',
+            'list' => '一覧',
+        ],
+
+        'refunds' => [
+            'title' => '返金',
+            'list' => '一覧',
+        ],
+
+        'payment_gateways' => [
+            'title' => '決済ゲートウェイ',
+            'list' => '一覧',
+        ],
+    ],
+
+    'payment_gateways' => [
+
+        // Page Titles
+        'title' => '決済ゲートウェイ',
+        'edit_title' => '決済ゲートウェイの編集',
+
+        // Table Headings
+        'id' => 'ID',
+        'name' => '名前',
+        'code' => 'コード',
+        'status' => 'ステータス',
+        'action' => '操作',
+
+        // Status Labels
+        'active' => '有効',
+        'inactive' => '無効',
+
+        // Delete Modal
+        'delete_confirm' => '削除の確認',
+        'delete_message' => 'この決済ゲートウェイを削除してもよろしいですか？',
+        'cancel' => 'キャンセル',
+        'delete' => '削除',
+
+        // Alerts / Notifications
+        'success' => '成功',
+        'deleted' => '削除されました',
+        'delete_error' => '決済ゲートウェイの削除中にエラーが発生しました！',
+
+        // Form Labels
+        'gateway_name' => 'ゲートウェイ名',
+        'description' => '説明',
+        'active_label' => '有効',
+        'configurations' => 'ゲートウェイ設定',
+        'key_name' => 'キー名',
+        'key_value' => 'キー値',
+        'environment' => '環境',
+        'sandbox' => 'サンドボックス',
+        'production' => '本番',
+        'encrypted' => '暗号化',
+        'unique' => '一意',
+        'update_button' => '更新',
+
+        // Fallback
+        'not_available' => '該当なし',
+    ],
+
+    'refunds' => [
+
+        // Page Titles
+        'title' => '返金',
+        'details_title' => '返金の詳細',
+
+        // Table Headings
+        'id' => 'ID',
+        'payment' => '支払い',
+        'amount' => '金額',
+        'status' => 'ステータス',
+        'reason' => '理由',
+        'action' => '操作',
+
+        // Status Labels
+        'completed' => '完了',
+        'pending' => '保留中',
+        'failed' => '失敗',
+
+        // Delete Modal
+        'delete_confirm' => '削除の確認',
+        'delete_message' => 'この返金を削除してもよろしいですか？',
+        'cancel' => 'キャンセル',
+        'delete' => '削除',
+
+        // Alerts / Notifications
+        'success' => '成功',
+        'deleted' => '削除済み',
+        'delete_error' => '返金の削除中にエラーが発生しました！',
+
+        // Refund Details Page
+        'created_at' => '作成日',
+        'updated_at' => '更新日',
+        'back' => '返金一覧に戻る',
+
+        // Fallback
+        'not_available' => '利用不可',
+    ],
+
+    'payments' => [
+
+        // Page Titles
+        'title' => '支払い',
+        'details_title' => '支払いの詳細',
+
+        // Table Headings
+        'id' => 'ID',
+        'order' => '注文',
+        'user' => 'ユーザー',
+        'gateway' => '決済ゲートウェイ',
+        'amount' => '金額',
+        'status' => 'ステータス',
+        'transaction' => '取引',
+        'action' => '操作',
+
+        // Status Labels
+        'completed' => '完了',
+        'pending' => '保留中',
+        'failed' => '失敗',
+
+        // Delete Modal
+        'delete_confirm' => '削除の確認',
+        'delete_message' => 'この支払いを削除してもよろしいですか？',
+        'cancel' => 'キャンセル',
+        'delete' => '削除',
+
+        // Alerts / Notifications
+        'success' => '成功',
+        'deleted' => '削除されました',
+        'delete_error' => '支払いの削除中にエラーが発生しました！',
+
+        // Payment Details Page
+        'transaction_id' => '取引ID',
+        'created_at' => '作成日時',
+        'back' => '支払い一覧に戻る',
+
+        // Fallback
+        'not_available' => '利用不可',
+    ],
+
+    'pages' => [
+        // General
+        'title' => 'ページ',
+        'choose_file' => 'ファイルを選択',
+
+        // Create Page
+        'create' => 'ページを作成',
+        'form_title' => 'タイトル (:code)',
+        'form_content' => 'コンテンツ (:code)',
+        'form_image' => '画像 (:code)',
+        'form_save' => '保存',
+
+        // Edit Page
+        'edit' => 'ページを編集',
+        'form_update' => '更新',
+
+        // Pages Table
+        'table_title' => 'タイトル',
+        'table_slug' => 'スラッグ',
+        'table_status' => 'ステータス',
+        'table_actions' => '操作',
+
+        // Delete Modal
+        'delete_modal_title' => '削除の確認',
+        'delete_modal_text' => 'このページを削除してもよろしいですか？',
+        'delete_modal_cancel' => 'キャンセル',
+        'delete_modal_delete' => '削除',
+
+        // Toastr messages
+        'toastr_success' => '成功',
+        'toastr_error' => 'ページの削除中にエラーが発生しました',
+    ],
+
+    'customers' => [
+        'customer_list' => '顧客一覧',
+
+        // Table columns
+        'id' => 'ID',
+        'name' => '名前',
+        'email' => 'メール',
+        'phone' => '電話番号',
+        'address' => '住所',
+        'status' => 'ステータス',
+        'actions' => '操作',
+
+        // Status labels
+        'active' => '有効',
+        'inactive' => '無効',
+
+        // Modal
+        'confirm_delete_title' => '削除の確認',
+        'confirm_delete_message' => 'この顧客を削除してもよろしいですか？',
+        'cancel_button' => 'キャンセル',
+        'delete_button' => '削除',
+
+        // Toastr messages
+        'success_title' => '成功',
+        'deleted_title' => '削除済み',
+        'delete_success_message' => '顧客が正常に削除されました！',
+        'delete_error_message' => '顧客の削除中にエラーが発生しました！',
     ],
 
     'vendors' => [
@@ -92,6 +300,18 @@ return [
         'phone' => '電話番号',
         'status' => 'ステータス',
         'actions' => '操作',
+        'register_new_vendor' => '新しいベンダーを登録',
+        'vendor_name' => 'ベンダー名',
+        'vendor_email' => 'ベンダーのメールアドレス',
+        'phone_optional' => '電話番号（任意）',
+        'password' => 'パスワード',
+        'confirm_password' => 'パスワード確認',
+        'status' => 'ステータス',
+        'active' => '有効',
+        'inactive' => '無効',
+        'banned' => '禁止',
+        'register_button' => 'ベンダーを登録',
+        'cancel_button' => 'キャンセル',
 
         'active' => 'アクティブ',
         'inactive' => '非アクティブ',
@@ -184,6 +404,8 @@ return [
         'title_manage' => '商品を管理',
 
         // フォームフィールド
+        'vendor' => 'ベンダー',
+        'select_vendor' => 'ベンダーを選択',
         'product_name' => '商品名',
         'product_type' => '商品タイプ',
         'description' => '説明',
