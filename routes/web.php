@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\SocialMediaLinkController;
 use App\Http\Controllers\Admin\VendorController;
 use App\Http\Controllers\SiteSettingsController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* require base_path('routes/store.php'); */
+require base_path('routes/store.php');
 
 Route::get('/login', function () {
     return view('admin.auth.login');

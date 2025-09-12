@@ -12,15 +12,19 @@ class WishlistController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
+        $customer = auth('customer')->user();
 
-        $products = $user->wishlistProducts()
+        if (!$customer) {
+            return redirect()->route('customer.login');
+        }
+
+        $products = $customer->wishlistProducts()
             ->with(['translation', 'thumbnail', 'primaryVariant', 'reviews'])
             ->withCount('reviews')
             ->orderBy('wishlists.created_at', 'desc')
             ->get();
 
-        return view('wishlist.index', compact('products'));
+        return view('themes.xylo.wishlist', compact('products'));
     }
 
     public function store(Request $request)

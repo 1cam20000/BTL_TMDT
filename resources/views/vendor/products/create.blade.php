@@ -20,23 +20,33 @@
                 </div>
             @endif
 
+            @php
+                $defaultLang = config('app.locale');
+            @endphp
+
             <ul class="nav nav-tabs" id="languageTabs" role="tablist">
                 @foreach($languages as $language)
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link {{ $loop->first ? 'active' : '' }}" id="{{ $language->name }}-tab" data-bs-toggle="tab" data-bs-target="#{{ $language->name }}" type="button" role="tab">{{ ucwords($language->name) }}</button>
+                        <button class="nav-link {{ $language->code == $defaultLang ? 'active' : '' }}"
+                                data-bs-toggle="tab"
+                                data-bs-target="#tab-{{ $language->code }}"
+                                type="button" role="tab">
+                            {{ strtoupper($language->code) }}
+                        </button>
                     </li>
                 @endforeach
             </ul>
 
             <div class="tab-content mt-3" id="languageTabContent">
                 @foreach($languages as $language)
-                    <div class="tab-pane fade show {{ $loop->first ? 'active' : '' }}" id="{{ $language->name }}" role="tabpanel">
-                        <label class="form-label">{{ __('cms.products.product_name') }} ({{ $language->code }})</label>
+                    <div class="tab-pane fade {{ $language->code == $defaultLang ? 'show active' : '' }}"
+                         id="tab-{{ $language->code }}" role="tabpanel">
+                        <label>{{ __('Tên sản phẩm') }} ({{ strtoupper($language->code) }})</label>
                         <input type="text"
                                name="translations[{{ $language->code }}][name]"
-                               class="form-control @error("translations.{$language->code}.name") is-invalid @enderror"
+                               class="form-control"
                                value="{{ old("translations.{$language->code}.name") }}"
-                               required>
+                               @if($language->code == $defaultLang) required @endif>
                         @error("translations.{$language->code}.name")
                             <div class="invalid-feedback d-block">{{ $message }}</div>
                         @enderror
