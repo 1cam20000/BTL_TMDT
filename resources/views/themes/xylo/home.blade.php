@@ -11,7 +11,7 @@
                         <h1 class="mt-5"><span>{{ $banner->translation ? $banner->translation->title : $banner->title }}</span>
                         </h1>
                         <p class="mt-3 mb-4">Explore the biggest variety of sneakers, shoes, and streetwear trends.</p>
-                        <button class="btn btn-primary">Shop Now</button>
+                        <a href="{{ route('shop.index') }}" class="btn btn-primary">Shop Now</a>
 
                         <div class="mt-5">
                             <img src="assets/images/slide-smallimages.png" alt="" style="width: 200px;">
@@ -35,7 +35,7 @@
                 @foreach($categories as $category)
                 <div>
                     <div class="cat-card">
-                        <a href="#">
+                        <a href="{{ route('shop.index', ['category[]' => $category->id]) }}">
                             <h3>{{ $category->translation->name ?? 'No Translation' }}</h3>
                             <div class="catcard-img">
                                 <img src="{{ Storage::url(optional($category->translation)->image_url ?? 'default.jpg') }}" alt="{{ $category->translation->name ?? 'No Translation' }}">
@@ -56,11 +56,11 @@
                 @foreach ($products as $product)
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="{{ Storage::url(optional($product->thumbnail)->image_url ?? 'default.jpg') }}" 
-                                alt="{{ $product->translation->name ?? 'Product Name Not Available' }}">
-                                <button class="wishlist-btn" data-product-id="{{ $product->id }}">
-                                    <i class="fa-solid fa-heart"></i>
-                                </button>
+                            <a href="{{ route('product.show', $product->slug) }}">
+                                <img src="{{ Storage::url(optional($product->thumbnail)->image_url ?? 'default.jpg') }}" 
+                                    alt="{{ $product->translation->name ?? 'Product Name Not Available' }}">
+                            </a>
+                            <button class="wishlist-btn" data-product-id="{{ $product->id }}"><i class="fa-solid fa-heart"></i></button>
                         </div>
                         <div class="product-info mt-4">
                             <div class="top-info">
@@ -87,7 +87,7 @@
                                         @endif
                                     </p>
                                 </div>
-                                <button class="cart-btn" onclick="addToCart({{ $product->id }})">
+                                <button class="cart-btn" onclick="addToCartAndRedirect({{ $product->id }})">
                                     <i class="fa fa-shopping-bag"></i>
                                 </button>
                             </div>
@@ -95,7 +95,6 @@
                     </div>
                 @endforeach
             </div>
-
             <!-- Custom Arrows -->
             <div class="custom-arrows">
                 <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
@@ -117,8 +116,10 @@
                 <div class="col-md-3">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="{{ Storage::url(optional($product->thumbnail)->image_url ?? 'default.jpg') }}" alt="{{ $product->translation->name ?? 'Product Name Not Available' }}">
-                            <button class="wishlist-btn"><i class="fa-solid fa-heart"></i></button>
+                            <a href="{{ route('product.show', $product->slug) }}">
+                                <img src="{{ Storage::url(optional($product->thumbnail)->image_url ?? 'default.jpg') }}" alt="{{ $product->translation->name ?? 'Product Name Not Available' }}">
+                            </a>
+                            <button class="wishlist-btn" data-product-id="{{ $product->id }}"><i class="fa-solid fa-heart"></i></button>
                         </div>
                         <div class="product-info mt-4">
                             <div class="top-info">
@@ -143,7 +144,7 @@
                                         @endif
                                     </p>
                                 </div>
-                                <button class="cart-btn" onclick="addToCart({{ $product->id }})">
+                                <button class="cart-btn" onclick="addToCartAndRedirect({{ $product->id }})">
                                     <i class="fa fa-shopping-bag"></i>
                                 </button>
                             </div>
@@ -152,11 +153,9 @@
                 </div>
                 @endforeach
             </div>
-
             <div class="view-button text-center mt-4">
-                <a href="#" class="read-more pe-4 ps-4">VIEW ALL</a>
+                <a href="{{ url('/products') }}" class="read-more pe-4 ps-4">VIEW ALL</a>
             </div>
-
         </div>
     </section>
 
@@ -215,36 +214,37 @@
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>
-        function addToCart(productId) {
-
-            fetch("{{ route('cart.add') }}", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                },
-                body: JSON.stringify({
-                    product_id: productId,
-                    quantity: 1
-                })
+    function addToCartAndRedirect(productId) {
+        fetch("{{ route('cart.add') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": "{{ csrf_token() }}"
+            },
+            body: JSON.stringify({
+                product_id: productId,
+                quantity: 1
             })
-            .then(response => response.json())
-            .then(data => {
-                toastr.success("{{ session('success') }}", data.message, {
-                    closeButton: true,
-                    progressBar: true,
-                    positionClass: "toast-top-right",
-                    timeOut: 5000
-                });
-                updateCartCount(data.cart);
-            })
-            .catch(error => console.error("Error:", error));
-        }
+        })
+        .then(response => response.json())
+        .then(data => {
+            toastr.success("Thêm vào giỏ hàng thành công!", data.message, {
+                closeButton: true,
+                progressBar: true,
+                positionClass: "toast-top-right",
+                timeOut: 2000
+            });
+            setTimeout(function() {
+                window.location.href = "{{ url('/cart') }}";
+            }, 1500);
+        })
+        .catch(error => console.error("Error:", error));
+    }
 
-        function updateCartCount(cart) {
-            let totalCount = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById("cart-count").textContent = totalCount;
-        }
+    function updateCartCount(cart) {
+        let totalCount = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById("cart-count").textContent = totalCount;
+    }
 </script>
 
 <script>
@@ -264,7 +264,6 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(response => {
                 if (response.status === 401) {
-                    // Not logged in
                     window.location.href = '/customer/login';
                 } else if (response.ok) {
                     return response.json();
@@ -274,11 +273,23 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(data => {
                 if (data?.message) {
-                    alert(data.message);
+                    toastr.success("Đã thêm vào wishlist!", data.message, {
+                        closeButton: true,
+                        progressBar: true,
+                        positionClass: "toast-top-right",
+                        timeOut: 2000
+                    });
+                    // Optionally reload wishlist count or redirect
+                    // window.location.href = '/customer/wishlist';
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
+                toastr.error("Có lỗi xảy ra!", error.message, {
+                    closeButton: true,
+                    progressBar: true,
+                    positionClass: "toast-top-right",
+                    timeOut: 2000
+                });
             });
         });
     });

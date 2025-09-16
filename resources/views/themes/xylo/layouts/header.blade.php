@@ -80,8 +80,8 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end p-2">
                     @guest
-                        <li><a class="dropdown-item" href="{{ route('customer.login') }}">Sign In</a></li>
-                        <li><a class="dropdown-item" href="{{ route('customer.register') }}">Sign Up</a></li>
+                        <li><a class="dropdown-item" href="{{ route('customer.login') }}">Login</a></li>
+                        <li><a class="dropdown-item" href="{{ route('customer.register') }}">Register</a></li>
                     @else
                         <li><a class="dropdown-item" href="{{ route('profile') }}">Profile</a></li>
                         <li><a class="dropdown-item" href="{{ route('orders') }}">Orders</a></li>

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
@@ -43,7 +44,7 @@ class ProductController extends Controller
 
             return $this->productService->getProductsForDataTable($request);
         } catch (\Exception $e) {
-            \Log::error('Error fetching vendor product data: '.$e->getMessage());
+            Log::error('Error fetching vendor product data: ' . $e->getMessage());
 
             return response()->json(['error' => 'An error occurred while fetching products.'], 500);
         }
@@ -66,7 +67,13 @@ class ProductController extends Controller
         ];
 
         return view('vendor.products.create', compact(
-            'languages', 'categories', 'brands', 'attributes', 'sizes', 'colors', 'attributeSizeMap'
+            'languages',
+            'categories',
+            'brands',
+            'attributes',
+            'sizes',
+            'colors',
+            'attributeSizeMap'
         ));
     }
 
@@ -77,15 +84,13 @@ class ProductController extends Controller
 
         $validated = $request->validate([
             'category_id' => 'required|exists:categories,id',
-            'brand_id' => 'nullable|exists:brands,id',
-            'translations.'.$defaultLang.'.name' => 'required|string|max:255',
-            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'translations.' . $defaultLang . '.name' => 'required|string|max:255',
             'variants' => 'required|array|min:1',
             'variants.*.name' => 'required|string|max:255',
+            'variants.*.SKU' => 'required|string|max:255|distinct|unique:product_variants,SKU',
             'variants.*.price' => 'required|numeric|min:0',
             'variants.*.discount_price' => 'nullable|numeric|min:0|lte:variants.*.price',
             'variants.*.stock' => 'required|integer|min:0',
-            'variants.*.SKU' => 'required|string|max:255',
             'variants.*.barcode' => 'nullable|string|max:255',
             'variants.*.weight' => 'nullable|numeric|min:0',
             'variants.*.dimensions' => 'nullable|string|max:255',
@@ -106,14 +111,17 @@ class ProductController extends Controller
                 'product_type' => 'variable',
             ]);
 
+            // Chỉ tạo translation nếu có name
             foreach ($request->translations as $lang => $data) {
-                $product->translations()->create([
-                    'language_code' => $lang,
-                    'name' => $data['name'],
-                    'description' => $data['description'] ?? null,
-                    'short_description' => $data['short_description'] ?? null,
-                    'tags' => $data['tags'] ?? null,
-                ]);
+                if (!empty($data['name'])) {
+                    $product->translations()->create([
+                        'language_code' => $lang,
+                        'name' => $data['name'],
+                        'description' => $data['description'] ?? null,
+                        'short_description' => $data['short_description'] ?? null,
+                        'tags' => $data['tags'] ?? null,
+                    ]);
+                }
             }
 
             if ($request->hasFile('images')) {
@@ -129,7 +137,7 @@ class ProductController extends Controller
 
             foreach ($request->variants as $variantData) {
                 $variant = $product->variants()->create([
-                    'variant_slug' => Str::slug($variantData['name']).'-'.uniqid(),
+                    'variant_slug' => Str::slug($variantData['name']) . '-' . uniqid(),
                     'price' => $variantData['price'],
                     'discount_price' => $variantData['discount_price'] ?? null,
                     'stock' => $variantData['stock'],
@@ -173,7 +181,7 @@ class ProductController extends Controller
         $original = $slug;
         $i = 1;
         while (Product::where('slug', $slug)->exists()) {
-            $slug = $original.'-'.$i++;
+            $slug = $original . '-' . $i++;
         }
 
         return $slug;
@@ -222,14 +230,14 @@ class ProductController extends Controller
         $validated = $request->validate([
             'category_id' => 'required|exists:categories,id',
             'brand_id' => 'nullable|exists:brands,id',
-            'translations.'.$defaultLang.'.name' => 'required|string|max:255',
+            'translations.' . $defaultLang . '.name' => 'required|string|max:255',
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'variants' => 'required|array|min:1',
             'variants.*.name' => 'required|string|max:255',
+            'variants.*.SKU' => 'required|string|max:255|distinct|unique:product_variants,SKU',
             'variants.*.price' => 'required|numeric|min:0',
             'variants.*.discount_price' => 'nullable|numeric|min:0|lte:variants.*.price',
             'variants.*.stock' => 'required|integer|min:0',
-            'variants.*.SKU' => 'required|string|max:255',
             'variants.*.barcode' => 'nullable|string|max:255',
             'variants.*.weight' => 'nullable|numeric|min:0',
             'variants.*.dimensions' => 'nullable|string|max:255',
@@ -283,7 +291,7 @@ class ProductController extends Controller
 
             foreach ($request->variants as $variantData) {
                 $variant = $product->variants()->create([
-                    'variant_slug' => Str::slug($variantData['name']).'-'.uniqid(),
+                    'variant_slug' => Str::slug($variantData['name']) . '-' . uniqid(),
                     'price' => $variantData['price'],
                     'discount_price' => $variantData['discount_price'] ?? null,
                     'stock' => $variantData['stock'],
@@ -339,7 +347,7 @@ class ProductController extends Controller
                 'message' => __('cms.products.success_delete'),
             ]);
         } catch (\Exception $e) {
-            \Log::error('Vendor product delete error: '.$e->getMessage());
+            Log::error('Vendor product delete error: ' . $e->getMessage());
 
             return response()->json([
                 'success' => false,
