@@ -41,10 +41,13 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 
 Route::prefix('customer')->name('customer.')->group(function () {
 
+    // Định nghĩa route login cho cả GET và POST, và cho cả tên 'themes.xylo.auth.login'
+    Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('login', [LoginController::class, 'login'])->name('login');
+    Route::get('login', [LoginController::class, 'showLoginForm'])->name('themes.xylo.auth.login');
+
     // Guest routes
     Route::middleware('guest:customer')->group(function () {
-        Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-        Route::post('login', [LoginController::class, 'login']);
 
         Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
         Route::post('register', [RegisterController::class, 'register']);

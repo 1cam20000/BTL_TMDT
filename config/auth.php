@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -14,8 +13,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'customer',
+        'passwords' => 'customers',
     ],
 
     /*
@@ -40,16 +39,8 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'vendor' => [
-            'driver' => 'session',
-            'provider' => 'vendors',
-        ],
         'customer' => [
             'driver' => 'session',
-            'provider' => 'customers',
-        ],
-        'api' => [
-            'driver' => 'sanctum',
             'provider' => 'customers',
         ],
     ],
@@ -76,19 +67,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'vendors' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Vendor::class,
-        ],
         'customers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Customer::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
@@ -136,5 +118,4 @@ return [
     */
 
     'password_timeout' => 10800,
-
 ];
