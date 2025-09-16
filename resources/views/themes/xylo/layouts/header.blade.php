@@ -80,7 +80,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end p-2">
                     @if(auth('customer')->check())
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('customer.profile') }}">Profile</a></li>
                         <li><a class="dropdown-item" href="#">Orders</a></li>
                         <li>
                             <a class="dropdown-item" href="{{ route('customer.logout') }}"
