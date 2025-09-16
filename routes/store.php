@@ -14,6 +14,7 @@ use App\Http\Controllers\Store\ShopController;
 use App\Http\Controllers\Store\WishlistController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Store\CustomerProfileController;
 
 Route::get('/', [StoreController::class, 'index'])->name('xylo.home');
 Route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');
@@ -64,5 +65,9 @@ Route::prefix('customer')->name('customer.')->group(function () {
         Route::post('logout', [LoginController::class, 'logout'])->name('logout');
         Route::post('/wishlist', [WishlistController::class, 'store'])->name('wishlist.store');
         Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+
+        // Profile routes
+        Route::get('profile', [CustomerProfileController::class, 'show'])->name('profile');
+        Route::post('profile', [CustomerProfileController::class, 'update'])->name('profile.update');
     });
 });
