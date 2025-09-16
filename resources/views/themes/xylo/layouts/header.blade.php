@@ -70,7 +70,7 @@
                 </form>
 
                 <!-- Wishlist Icon -->
-                <a href="{{ auth()->check() ? route('customer.wishlist.index') : route('customer.login') }}" class="text-dark homepage-icon">
+                <a href="{{ auth('customer')->check() ? route('customer.wishlist.index') : route('customer.login') }}" class="text-dark homepage-icon">
                     <i class="fa-regular fa-heart"></i>
                 </a>
 
@@ -79,20 +79,20 @@
                     <i class="fa-regular fa-user"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end p-2">
-                    @guest
-                        <li><a class="dropdown-item" href="{{ route('customer.login') }}">Login</a></li>
-                        <li><a class="dropdown-item" href="{{ route('customer.register') }}">Register</a></li>
-                    @else
-                        <li><a class="dropdown-item" href="{{ route('profile') }}">Profile</a></li>
-                        <li><a class="dropdown-item" href="{{ route('orders') }}">Orders</a></li>
+                    @if(auth('customer')->check())
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Orders</a></li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="{{ route('customer.logout') }}"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            <form id="logout-form" action="{{ route('customer.logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </li>
-                    @endguest
+                    @else
+                        <li><a class="dropdown-item" href="{{ route('customer.login') }}">Login</a></li>
+                        <li><a class="dropdown-item" href="{{ route('customer.register') }}">Register</a></li>
+                    @endif
                 </ul>   
 
                 <!-- Cart Icon -->
@@ -105,4 +105,7 @@
             </div>
         </div>
     </div>
+
+    {{-- Debug user --}}
+    {{-- @php dd(auth()->user()); @endphp --}}
 </header>
