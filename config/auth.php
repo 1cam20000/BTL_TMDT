@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -14,8 +13,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'customer',
-        'passwords' => 'customers',
+        'guard' => 'web',
+        'passwords' => 'users',
     ],
 
     /*
@@ -136,5 +135,4 @@ return [
     */
 
     'password_timeout' => 10800,
-
 ];

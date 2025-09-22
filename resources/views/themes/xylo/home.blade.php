@@ -1,5 +1,11 @@
 @extends('themes.xylo.layouts.master')
 @section('content')
+    @include('themes.xylo.partials.intro', [
+      'video'   => asset('videos/intro.mp4'),
+
+      // nav -> home
+      'shopUrl' => (Route::has('/') ? route('/') : url('/'))
+  ])
     @php $currency = activeCurrency(); @endphp
     {{-- Banner Section Start --}}
     <section class="banner-area py-5 animate__animated animate__fadeIn">
